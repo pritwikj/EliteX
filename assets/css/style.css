@@ -319,6 +319,7 @@ body { background: var(--white); }
 .hero-title { 
   margin-bottom: 20px;
   color: #00BF63;
+  width: 120%;
 }
 
 .hero .section-text { margin-bottom: 45px; }
