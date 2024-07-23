@@ -49,7 +49,8 @@ document.addEventListener('DOMContentLoaded', function() {
   const images = [
     './assets/images/81.png',
     './assets/images/82.png',
-    './assets/images/Longer wide.png'
+    './assets/images/Longer wide.png',
+    './assets/images/elaine.png'
   ];
 
   let currentImageIndex = 0;
@@ -60,5 +61,5 @@ document.addEventListener('DOMContentLoaded', function() {
     heroImage.src = images[currentImageIndex];
   }
 
-  setInterval(changeHeroImage, 2500); // Change image every 2.5 secs
+  setInterval(changeHeroImage, 4000); // Change image every 2.5 secs
 });
