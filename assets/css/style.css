@@ -316,6 +316,11 @@ body { background: var(--white); }
   opacity: 1;
 }
 
+/* New style for the highlight class */
+.highlight {
+  color: #1A3D6B;
+}
+
 .hero-title { 
   margin-bottom: 20px;
   color: #00BF63;
