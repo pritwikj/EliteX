@@ -317,9 +317,9 @@ body { background: var(--white); }
 }
 
 /* New style for the highlight class */
-.highlight {
+/* .highlight {
   color: #1A3D6B;
-}
+} */
 
 .hero-title { 
   margin-bottom: 20px;
