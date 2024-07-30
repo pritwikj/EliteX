@@ -645,61 +645,94 @@ body { background: var(--white); }
 
 .departments-title {
   text-align: center;
-  margin-bottom: 80px;
+  margin-top: -30px;
+  margin-bottom: 0px; /* Reduced margin to decrease the gap */
+  color: #00BF63;
+}
+
+.section-text-it {
+  text-align: center;
+  max-width: 800px;
+  margin: 0 auto 60px;
+  margin-top: -20px; /* Optional adjustment */
+  line-height: 1.6;
+  color: black; /* Added this line to change text color to black */
 }
 
 .departments-list {
-  display: grid;
+  display: flex;
+  justify-content: center;
   gap: 30px;
-  margin-bottom: 50px;
-  margin-top: 30px;
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
 .departments-card {
   background: var(--white);
-  box-shadow: 5px 30px 50px hsla(0, 1%, 15%, 0.05);
-  max-width: 400px;
-  margin-inline: auto;
-  padding: 20px;
-  border-radius: 25px;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+  padding: 30px;
+  border-radius: 30px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  width: 45%;
+  min-width: 300px;
+  height: 100%; /* Ensure both cards have the same height */
 }
 
-.departments-card .card-banner {
+.departments-card .card-title {
+  color: #00BF63;
+  font-size: 28px;
   margin-bottom: 20px;
-  border-radius: 12px 12px 0 0;
-  overflow: hidden;
+  align-self: center; /* Center the title */
 }
 
-.departments-card img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  transition: var(--transition);
+.card-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  flex-grow: 1;
 }
-
-.departments-card:hover img { transform: scale(1.05); }
-
-.departments-card .card-title { margin-bottom: 15px; }
 
 .departments-card .card-text {
-  line-height: 1.5;
-  margin-bottom: 20px;
+  line-height: 1.6;
+  margin-bottom: 25px;
 }
 
-.departments-card .card-link {
-  color: var(--orange-web);
-  font-family: var(--ff-rubik);
-  font-weight: var(--fw-500);
-  display: flex;
-  justify-content: flex-start;
-  align-items: center;
-  gap: 10px;
-  transition: var(--transition);
+.departments-card .btn-primary {
+  background-color: #4AA9FF;
+  color: white;
+  padding: 12px 24px;
+  border-radius: 25px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: background-color 0.3s;
+  margin-bottom: 25px;
+  align-self: center; /* Center the button */
 }
 
-.departments-card .card-link:is(:hover, :focus) { gap: 15px; }
+.departments-card .card-image {
+  width: 100%;
+  height: 200px;
+  overflow: hidden;
+  border-radius: 20px;
+  margin-top: auto; /* Push the image to the bottom */
+}
 
-.departments .btn-primary { margin-inline: auto; }
+@media (max-width: 768px) {
+  .departments-list {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .departments-card {
+    width: 90%;
+    height: auto; /* Allow cards to adjust height on mobile */
+  }
+}
+
+
 
 
 
@@ -711,7 +744,7 @@ body { background: var(--white); }
 
 .instructor {
   padding-block: var(--section-padding);
-  margin-top: -45px; /* Adjust this value as needed to move the section up */
+  margin-top: 40px; /* Adjust this value as needed to move the section up */
 }
 
 .instructor .title-wrapper { margin-bottom: 80px; }
@@ -1267,32 +1300,106 @@ body { background: var(--white); }
 
 
 
-  /**
-   * DEPARTMETNS
-   */
+/**
+ * DEPARTMENTS
+ */
 
-  .departments {
-    position: relative;
-    z-index: 1;
+ .departments {
+  position: relative;
+  z-index: 1;
+  padding: 50px 0;
+}
+
+.departments .vector-line {
+  top: 50px;
+  right: 0;
+  z-index: -1;
+}
+
+.departments-title {
+  max-width: 700px;
+  margin: 0 auto 40px;
+  text-align: center;
+}
+
+.departments-list {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.departments-card {
+  background: var(--white);
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+  padding: 30px 30px 60px;
+  border-radius: 30px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  width: 45%;
+  min-width: 300px;
+}
+
+.departments-card .card-title {
+  color: #00BF63;
+  font-size: 28px;
+  margin-bottom: 20px;
+}
+
+.departments-card .card-text {
+  flex-grow: 1;
+  line-height: 1.6;
+  margin-bottom: 25px;
+}
+
+.departments-card .btn-primary {
+  background-color: #4AA9FF;
+  color: white;
+  padding: 12px 24px;
+  border-radius: 25px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: background-color 0.3s;
+  margin-bottom: 25px;
+}
+
+.departments-card .btn-primary:hover {
+  background-color: #3399FF;
+}
+
+.departments-card .card-image {
+  width: 90%;
+  height: 180px;
+  overflow: hidden;
+  border-radius: 20px;
+  margin-top: auto;
+}
+
+.departments-card .card-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  transition: transform 0.3s ease;
+}
+
+.departments-card:hover .card-image img {
+  transform: scale(1.05);
+}
+
+@media (max-width: 768px) {
+  .departments-list {
+    flex-direction: column;
+    align-items: center;
   }
-
-  .departments .vector-line {
-    top: 50px;
-    right: 0;
-    z-index: -1;
-  }
-
-  .departments-title { max-width: 500px; }
-
-  .departments-list { grid-template-columns: repeat(3, 1fr); }
 
   .departments-card {
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    align-items: flex-start;
+    width: 90%;
   }
+}
 
 
 
