@@ -475,7 +475,8 @@ body { background: var(--white); }
 .passion-project-title {
   text-align: center;
   color: #00BF63;
-  margin-bottom: 40px;
+  margin-top: -30px;
+  margin-bottom: 50px;
 }
 
 .passion-project-content {
@@ -494,19 +495,23 @@ body { background: var(--white); }
 }
 
 .siblings-image {
-  width: 100%;
+  width: 73%;
+  max-width: 500px;
   border-radius: 10px;
+  display: block; /* Ensure it's a block-level element */
+  margin: 0 auto; /* Center the image horizontally */
 }
 
 .passion-project-text {
   flex: 1;
   font-size: 20px;
-  line-height: 1.6;
-  white-space: normal; /* Ensures normal wrapping */
-  word-wrap: break-word; /* Allows long words to break */
-  overflow-wrap: break-word; /* Modern version of word-wrap */
-  hyphens: auto; /* Allows hyphenation for better text flow */
-  -webkit-hyphens: auto; /* For webkit browsers */
+  line-height: 2.2; /* or whatever value you settled on */
+  white-space: normal;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  word-break: keep-all; /* Prevents breaking words at the end of lines */
+  hyphens: none; /* Disables automatic hyphenation */
+  -webkit-hyphens: none;
 }
 
 
@@ -521,7 +526,7 @@ body { background: var(--white); }
   display: flex;
   justify-content: space-between;
   align-items: flex-start; /* Change this from center to flex-start */
-  margin-top: 40px;
+  margin-top: 120px;
   position: relative;
 }
 
@@ -1382,7 +1387,8 @@ body { background: var(--white); }
   width: 100%;
   height: 100%;
   object-fit: cover;
-  object-position: center;
+  object-position: center top;
+  transform: scale(1.1); /* Slight zoom out */
   transition: transform 0.3s ease;
 }
 
