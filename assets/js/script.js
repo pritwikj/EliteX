@@ -38,14 +38,18 @@ window.addEventListener("scroll", function () {
 /**
  * img rotation functionality
  */
+
 document.addEventListener('DOMContentLoaded', function() {
+  // Commented out carousel functionality
+  /*
   const carousel = document.querySelector('.carousel-slide');
   const logos = carousel.innerHTML;
 
-  
   carousel.innerHTML += logos;
+  */
 
   // hero image rotation
+  /*
   const images = [
     './assets/images/81.png',
     './assets/images/82.png',
@@ -62,4 +66,5 @@ document.addEventListener('DOMContentLoaded', function() {
   }
 
   setInterval(changeHeroImage, 4000); // Change image every 2.5 secs
+  */
 });

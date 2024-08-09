@@ -296,7 +296,7 @@ body { background: var(--white); }
 
 .hero {
   background: var(--gradient);
-  padding: 150px 0 var(--section-padding);
+  padding: 170px 0 calc(var(--section-padding) + 20px);
 }
 
 .hero-banner { margin-bottom: 40px;}
@@ -304,7 +304,7 @@ body { background: var(--white); }
 .hero-banner img {
   width: 78%; 
   height: 190%; 
-  margin-top: 0px;
+  margin-top: 30px;
   margin-left: 26%; 
   transition: opacity 0.5s ease-in-out;
 }
@@ -492,6 +492,7 @@ body { background: var(--white); }
   align-items: center;
   gap: 40px;
   margin-bottom: 60px;
+  
 }
 
 .passion-project-image {
@@ -509,13 +510,14 @@ body { background: var(--white); }
 .passion-project-text {
   flex: 1;
   font-size: 21px;
-  line-height: 2.2; /* or whatever value you settled on */
+  line-height: 2.2; 
   white-space: normal;
   word-wrap: break-word;
   overflow-wrap: break-word;
   word-break: keep-all; /* Prevents breaking words at the end of lines */
   hyphens: none; /* Disables automatic hyphenation */
   -webkit-hyphens: none;
+  text-align: center;
 }
 
 
@@ -652,7 +654,7 @@ body { background: var(--white); }
 .how-it-works-title {
   font-size: 36px;
   color: #00BF63;
-  margin-top: -55px;
+  margin-top: -20px;
   margin-bottom: 40px;
   text-align: center;
 }
@@ -673,7 +675,7 @@ body { background: var(--white); }
 }
 
 .item-title {
-  font-size: 24px; 
+  font-size: 25px; 
   font-weight: bold;
   color: #1A3D6B;
   margin-bottom: 15px; 
@@ -682,14 +684,14 @@ body { background: var(--white); }
 
 .how-it-works-item p {
   font-family: var(--ff-rubik);
-  font-size: 20px; 
+  font-size: 21px; 
   line-height: 1.6;
   color: #555;
   margin-bottom: 8px; 
 }
 
 .how-it-works-item:last-child {
-  margin-bottom: 0; /* Removes margin from the last item */
+  margin-bottom: -70px; /* Removes margin from the last item */
 }
 
 @media (max-width: 768px) {
@@ -724,7 +726,7 @@ body { background: var(--white); }
 
 .section-text-it {
   text-align: center;
-  font-size: 18px;
+  font-size: 21px;
   max-width: 1000px;
   margin: 0 auto 60px;
   margin-top: -30px;
@@ -816,9 +818,10 @@ body { background: var(--white); }
  * #INSTRUCTOR
 \*-----------------------------------*/
 
+/* Start of commented section
 .instructor {
   padding-block: var(--section-padding);
-  margin-top: 40px; /* Adjust this value as needed to move the section up */
+  margin-top: 40px;
 }
 
 .instructor .title-wrapper { margin-bottom: 80px; }
@@ -862,8 +865,6 @@ body { background: var(--white); }
   box-shadow: 0 6px 12px rgba(0, 0, 0, 0.45);
 }
 
-
-
 .instructor-card .card-title {
   color: var(--onyx);
   font-family: var(--ff-poppins);
@@ -883,7 +884,7 @@ body { background: var(--white); }
   color: var(--onyx);
   font-size: 18px;
 }
-
+End of commented section */
 
 
 
@@ -1477,6 +1478,66 @@ body { background: var(--white); }
 }
 
 
+  /**
+   * FOUNDERS
+   */
+
+   .founders-container {
+    display: flex;
+    justify-content: center;
+    gap: 200px; /* Adjust this value as needed */
+    margin-bottom: 40px;
+  }
+  
+  .founder {
+    text-align: center;
+    max-width: 300px;
+  }
+  
+  .founder-image {
+    width: 300px;  /* Increased from 250px */
+    height: 300px; /* Increased from 250px */
+    object-fit: cover;
+    margin-bottom: 20px;
+    border-radius: 20px;
+  }
+  
+  .pritwik-image {
+    object-position: center 15%; /* Adjust this value as needed */
+    /* Or if you need more space: */
+    /* height: 270px; */
+    /* object-position: center 10%; */
+  }
+  
+  
+  .founder-name {
+    font-family: 'Rubik', sans-serif; /* Added Rubik font */
+    font-size: 26px;
+    font-weight: bold;
+    margin-bottom: 10px;
+    color: #1A3D6B;
+  }
+  
+  .founder-description {
+    font-family: 'Rubik', sans-serif; /* Added Rubik font */
+    font-size: 20px;
+    line-height: 1.4;
+    color: #555;
+    margin-bottom: 5px;
+  }
+  
+  @media (max-width: 768px) {
+    .founders-container {
+      flex-direction: column;
+      align-items: center;
+    }
+    
+    .founder {
+      margin-bottom: 30px;
+    }
+  }
+
+
 
   /**
    * INSTRUCTOR
@@ -1556,7 +1617,8 @@ body { background: var(--white); }
   max-width: 1200px;
   margin: 0 auto;
   padding: 20px;
-  margin-top: -90px;
+  margin-top: 40px;
+  margin-bottom: 100px;
 }
 
 .testimonials-title {
@@ -1573,7 +1635,7 @@ body { background: var(--white); }
 
 .testimonials-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-template-columns: repeat(3, 1fr);
   gap: 20px;
 }
 
@@ -1761,3 +1823,15 @@ body { background: var(--white); }
     font-size: 28px;
   }
 } */
+
+@media screen and (max-width: 1024px) {
+  .testimonials-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .testimonials-grid {
+    grid-template-columns: 1fr;
+  }
+}
