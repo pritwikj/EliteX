@@ -489,14 +489,14 @@ body { background: var(--white); }
   background-color: #f0f0f0; /* Light gray color, adjust as needed */
   padding: 25px 0; /* Adjust top and bottom padding as needed, set left and right padding to 0 */
   border-radius: 8px;
-  width: 100vw; /* Make the width span the entire viewport */
-  margin: 0 auto;
+  /* width: 100vw;
+  margin: 0 auto; */
   text-align: center;
-  position: relative;
-  left: 50%; /* Adjust position */
-  right: 50%; /* Adjust position */
-  margin-left: -50vw; /* Adjust position */
-  margin-right: -50vw; /* Adjust position */
+  /* position: relative;
+  left: 50%; 
+  right: 50%;
+  margin-left: -50vw;
+  margin-right: -50vw; */
   margin-top: 75px;
 }
 
@@ -1241,9 +1241,21 @@ End of commented section */
 
 }
 
+.founder-description {
+  font-family: 'Rubik', sans-serif; /* Added Rubik font */
+  font-size: 20px;
+  line-height: 1.4;
+  color: #555;
+  margin-bottom: 5px;
+}
 
-
-
+.founder-name {
+  font-family: 'Rubik', sans-serif; /* Added Rubik font */
+  font-size: 26px;
+  font-weight: bold;
+  margin-bottom: 10px;
+  color: #1A3D6B;
+}
 
 /**
  * responsive for larger than 1024px screen
@@ -1495,22 +1507,27 @@ End of commented section */
    */
 
    .founders-container {
-    display: flex;
-    justify-content: center;
-    gap: 200px; /* Adjust this value as needed */
-    margin-bottom: 40px;
+    /* display: flex;
+    justify-content: center; */
+    /* gap: 200px;
+    margin-bottom: 40px; */
   }
   
   .founder {
     text-align: center;
-    max-width: 300px;
+    display: flex;
+    width: 100%;
+    margin-bottom: 30px;
   }
-  
+  .founder-details{
+    width: calc(100% - 300px);
+    padding: 16px 0 16px 30px;
+  }
   .founder-image {
     width: 300px;  /* Increased from 250px */
     height: 300px; /* Increased from 250px */
     object-fit: cover;
-    margin-bottom: 20px;
+    /* margin-bottom: 20px; */
     border-radius: 20px;
   }
   
@@ -1520,23 +1537,7 @@ End of commented section */
     /* height: 270px; */
     /* object-position: center 10%; */
   }
-  
-  
-  .founder-name {
-    font-family: 'Rubik', sans-serif; /* Added Rubik font */
-    font-size: 26px;
-    font-weight: bold;
-    margin-bottom: 10px;
-    color: #1A3D6B;
-  }
-  
-  .founder-description {
-    font-family: 'Rubik', sans-serif; /* Added Rubik font */
-    font-size: 20px;
-    line-height: 1.4;
-    color: #555;
-    margin-bottom: 5px;
-  }
+
   
   @media (max-width: 768px) {
     .founders-container {
@@ -1791,6 +1792,23 @@ End of commented section */
   }
   .passion-project-image {
     margin-bottom: 30px;
+  }
+  .founder {
+    width: 100%;
+    margin-bottom: 50px;
+  }
+  .founder-details{
+    width: 100%;
+    padding: 16px 0;
+    text-align: center;
+  }
+  .founder-image {
+    width: 300px;  /* Increased from 250px */
+    height: 300px; /* Increased from 250px */
+    object-fit: cover;
+    /* margin-bottom: 20px; */
+    border-radius: 20px;
+    margin: 0 auto;
   }
 }
 @media screen and (max-width: 768px) {
