@@ -322,10 +322,6 @@ body { background: var(--white); }
 .highlight {
   color: #1A3D6B;
   display: inline-block; /* Ensures the highlight only spans the width of the text */
-  padding-bottom: 0px;
-  padding-top: 0px;
-  padding-left: 2px;
-  padding-right: 2px;
   margin-top: 18px;
   line-height: 0.8; /* Adjust line-height to bring text and underline closer */
   position: relative; /* Required for positioning the pseudo-element */
@@ -520,11 +516,12 @@ body { background: var(--white); }
   font-weight: bold;
   color: white;
   line-height: 1.8; 
-  white-space: nowrap;
   text-align: center;
   margin-top: 0px;
   overflow: hidden;
   text-overflow: ellipsis;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
 }
 
 
