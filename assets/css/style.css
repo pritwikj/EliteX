@@ -718,12 +718,12 @@ body { background: var(--white); }
  * #PROGRAMS
 \*-----------------------------------*/
 
-.departments {
+.programs {
   padding-block: var(--section-padding);
   background: var(--floral-white);
 }
 
-.departments-title {
+.programs-title {
   text-align: center;
   margin-top: -30px;
   margin-bottom: 0px; /* Reduced margin to decrease the gap */
@@ -740,7 +740,7 @@ body { background: var(--white); }
   color: #6f6f76; /* Added this line to change text color to black */
 }
 
-.departments-list {
+.programs-list {
   display: flex;
   justify-content: center;
   gap: 30px;
@@ -748,7 +748,7 @@ body { background: var(--white); }
   margin: 0 auto;
 }
 
-.departments-card {
+.programs-card {
   background: var(--white);
   box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
   padding: 30px;
@@ -762,7 +762,7 @@ body { background: var(--white); }
   height: 100%; /* Ensure both cards have the same height */
 }
 
-.departments-card .card-title {
+.programs-card .card-title {
   color: #00BF63;
   font-size: 28px;
   margin-bottom: 20px;
@@ -776,13 +776,13 @@ body { background: var(--white); }
   flex-grow: 1;
 }
 
-.departments-card .card-text {
+.programs-card .card-text {
   line-height: 1.6;
   margin-bottom: 25px;
   color: #000;
 }
 
-.departments-card .btn-primary {
+.programs-card .btn-primary {
   background-color: #4AA9FF;
   color: white;
   padding: 12px 24px;
@@ -794,7 +794,7 @@ body { background: var(--white); }
   align-self: center; /* Center the button */
 }
 
-.departments-card .card-image {
+.programs-card .card-image {
   width: 100%;
   height: 200px;
   overflow: hidden;
@@ -803,12 +803,12 @@ body { background: var(--white); }
 }
 
 @media (max-width: 768px) {
-  .departments-list {
+  .programs-list {
     flex-direction: column;
     align-items: center;
   }
 
-  .departments-card {
+  .programs-card {
     width: 90%;
     height: auto; /* Allow cards to adjust height on mobile */
   }
@@ -1117,10 +1117,10 @@ End of commented section */
 
 
   /**
-   * DEPARTMENTS
+   * programs
    */
 
-  .departments-card { padding: 30px; }
+  .programs-card { padding: 30px; }
 
 
 
@@ -1182,15 +1182,15 @@ End of commented section */
 
 
   /**
-   * DEPARTMENTS
+   * programs
    */
 
-  .departments-title {
+  .programs-title {
     max-width: 600px;
     margin-inline: auto;
   }
 
-  .departments-list { grid-template-columns: 1fr 1fr; }
+  .programs-list { grid-template-columns: 1fr 1fr; }
 
 
 
@@ -1394,28 +1394,28 @@ End of commented section */
 
 
 /**
- * DEPARTMENTS
+ * programs
  */
 
- .departments {
+ .programs {
   position: relative;
   z-index: 1;
   padding: 50px 0;
 }
 
-.departments .vector-line {
+.programs .vector-line {
   top: 50px;
   right: 0;
   z-index: -1;
 }
 
-.departments-title {
+.programs-title {
   max-width: 700px;
   margin: 0 auto 40px;
   text-align: center;
 }
 
-.departments-list {
+.programs-list {
   display: flex;
   justify-content: center;
   gap: 30px;
@@ -1423,7 +1423,7 @@ End of commented section */
   margin: 0 auto;
 }
 
-.departments-card {
+.programs-card {
   background: var(--white);
   box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
   padding: 30px 30px 60px;
@@ -1436,19 +1436,19 @@ End of commented section */
   min-width: 300px;
 }
 
-.departments-card .card-title {
+.programs-card .card-title {
   color: #00BF63;
   font-size: 28px;
   margin-bottom: 20px;
 }
 
-.departments-card .card-text {
+.programs-card .card-text {
   flex-grow: 1;
   line-height: 1.6;
   margin-bottom: 25px;
 }
 
-.departments-card .btn-primary {
+.programs-card .btn-primary {
   background-color: #4AA9FF;
   color: white;
   padding: 12px 24px;
@@ -1459,11 +1459,11 @@ End of commented section */
   margin-bottom: 25px;
 }
 
-.departments-card .btn-primary:hover {
+.programs-card .btn-primary:hover {
   background-color: #3399FF;
 }
 
-.departments-card .card-image {
+.programs-card .card-image {
   width: 90%;
   height: 180px;
   overflow: hidden;
@@ -1471,7 +1471,7 @@ End of commented section */
   margin-top: auto;
 }
 
-.departments-card .card-image img {
+.programs-card .card-image img {
   width: 100%;
   height: 100%;
   object-fit: cover;
@@ -1480,17 +1480,17 @@ End of commented section */
   transition: transform 0.3s ease;
 }
 
-.departments-card:hover .card-image img {
+.programs-card:hover .card-image img {
   transform: scale(1.05);
 }
 
 @media (max-width: 768px) {
-  .departments-list {
+  .programs-list {
     flex-direction: column;
     align-items: center;
   }
 
-  .departments-card {
+  .programs-card {
     width: 90%;
   }
 }
@@ -1634,7 +1634,7 @@ End of commented section */
   color: #00BF63;
 }
 
-.departments-title {
+.programs-title {
   text-align: center;
   margin-bottom: 40px;
   color: #00BF63;
@@ -1742,9 +1742,9 @@ End of commented section */
    */
   .container { max-width: 1150px; }
   /**
-   * DEPARTMENTS
+   * programs
    */
-  .departments-title { max-width: 550px; }
+  .programs-title { max-width: 550px; }
   /**
    * INSTRUCTOR
    */
@@ -1813,10 +1813,10 @@ End of commented section */
   .hero {
     padding: 140px 0 var(--section-padding);
   }
-  .departments-card .card-image img{
+  .programs-card .card-image img{
     width: 100%;
   }
-  .departments-card .card-image {
+  .programs-card .card-image {
     height: auto;
   }
   .testimonials>.container {
