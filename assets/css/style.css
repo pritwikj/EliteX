@@ -802,7 +802,7 @@ body { background: var(--white); }
   box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
   max-width: 850px;
   margin: 40px auto -20px;
-  padding: 35px 45px;
+  padding: 30px 45px;
   background-color: white;
   border-radius: 25px;
 }
