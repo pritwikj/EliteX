@@ -798,15 +798,75 @@ body { background: var(--white); }
   margin-top: auto; /* Push the image to the bottom */
 }
 
+.programs-additional-info {
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+  max-width: 850px;
+  margin: 40px auto -20px;
+  padding: 35px 45px;
+  background-color: white;
+  border-radius: 25px;
+}
+
+.programs-additional-info .info-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.programs-additional-info .text-content {
+  flex-grow: 1;
+  padding-right: 40px;
+}
+
+.programs-additional-info p {
+  font-family: var(--ff-poppins);
+  font-size: 22px; /* Increased from 20px, but not as large as 24px */
+  font-weight: bold;
+  line-height: 1.5;
+  color: #00BF63;
+  margin: 0;
+}
+
+.programs-additional-info p:first-child {
+  margin-bottom: 12px; /* Slightly increased from 10px for better spacing */
+  font-size: 24px; /* Larger than before, but not as large as 28px */
+}
+
+.programs-additional-info p:last-child {
+  font-size: 18px; /* Increased from 16px, but not as large as 20px */
+  color: #000000;
+  font-family: var(--ff-rubik);
+  font-weight: normal;
+  line-height: 1.6; /* Kept for better readability */
+}
+
+.programs-additional-info .btn-primary {
+  background-color: #4AA9FF;
+  color: white;
+  padding: 12px 24px;
+  border-radius: 25px;
+  text-decoration: none;
+  font-family: var(--ff-poppins);
+  font-weight: bold;
+  transition: background-color 0.3s;
+  white-space: nowrap;
+  flex-shrink: 0;
+  margin-right: 3%;
+}
+
 @media (max-width: 768px) {
-  .programs-list {
+  .programs-additional-info .info-content {
     flex-direction: column;
-    align-items: center;
+    align-items: flex-start;
   }
 
-  .programs-card {
-    width: 90%;
-    height: auto; /* Allow cards to adjust height on mobile */
+  .programs-additional-info .text-content {
+    margin-bottom: 15px;
+    padding-right: 0;
+  }
+
+  .programs-additional-info .btn-primary {
+    align-self: flex-start;
   }
 }
 
