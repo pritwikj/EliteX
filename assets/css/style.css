@@ -536,11 +536,21 @@ body { background: var(--white); }
 .passion-project-steps {
   display: flex;
   justify-content: space-between;
-  align-items: flex-start; /* Change this from center to flex-start */
+  align-items: flex-start;
   margin-top: 120px;
   position: relative;
 }
 
+.passion-project-steps::before {
+  content: '';
+  position: absolute;
+  top: 110px;
+  left: 10%;
+  right: 10%;
+  height: 2px;
+  border-top: 2px dashed #000;
+  z-index: 1;
+}
 
 .highlight.no-underline {
   background-color: #1A3D6B;
@@ -549,9 +559,9 @@ body { background: var(--white); }
   border-radius: 3px;
   text-decoration: none;
   border-bottom: none;
-  display: inline; /* Ensures inline flow */
-  box-decoration-break: clone; /* Maintains padding on line breaks */
-  -webkit-box-decoration-break: clone; /* For webkit browsers */
+  display: inline;
+  box-decoration-break: clone;
+  -webkit-box-decoration-break: clone;
 }
 
 .highlight.no-underline::after {
@@ -582,6 +592,19 @@ body { background: var(--white); }
   padding: 10px;
 }
 
+
+.step-icon::before {
+  content: '';
+  position: absolute;
+  top: -10px;
+  left: -10px;
+  right: -10px;
+  bottom: -10px;
+  background-color: #f9fafb;
+  z-index: -1;
+  border-radius: 50%;
+}
+
 .step-text {
   font-family: var(--ff-rubik);
   font-size: 20px;
@@ -597,22 +620,16 @@ body { background: var(--white); }
 
 .admission-ready-step .step-icon {
   position: relative;
-  margin-top: 39px; /* Move the icon up slightly */
+  margin-top: 39px;
 }
 
 .admission-ready-step .step-text {
-  margin-top: 11px; /* Move the text down */
+  margin-top: 11px;
 }
 
+/* Remove individual step lines */
 .step:not(:last-child)::after {
-  content: '';
-  position: absolute;
-  top: 110px;
-  left: 50%;
-  width: calc(100% - 60px);
-  height: 2px;
-  border-top: 2px dashed #000;
-  z-index: 1;
+  display: none;
 }
 
 @media (max-width: 768px) {
@@ -620,28 +637,26 @@ body { background: var(--white); }
     flex-direction: column;
     align-items: flex-start;
   }
+  
+  .passion-project-steps::before {
+    top: 60px;
+    left: 45px;
+    width: 2px;
+    height: calc(100% - 120px);
+    border-top: none;
+    border-left: 2px dashed #000;
+  }
+  
   .step {
     width: 100%;
     margin-bottom: 40px;
     text-transform: capitalize;
-    /* flex-direction: row;
-    justify-content: flex-start; */
   }
-  .step:not(:last-child)::after {
-    top: 103%;
-    left: 50%;
-    width: 2px;
-    height: 40px;
-    border-top: none;
-    border-left: 2px dashed #000;
-  }
-  /* .step-icon {
-    margin-right: 20px;
-  } */
+  
   .step-text {
     margin-top: 0;
   }
-  /* Adjust the admission-ready-icon for mobile */
+  
   .step-icon.admission-ready {
     margin-top: 0;
   }
@@ -977,13 +992,24 @@ body { background: var(--white); }
  * #INSTRUCTOR
 \*-----------------------------------*/
 
-/* Start of commented section
 .instructor {
   padding-block: var(--section-padding);
   margin-top: 40px;
 }
 
-.instructor .title-wrapper { margin-bottom: 80px; }
+.instructor .title-wrapper {
+  margin-bottom: 100px;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.departments-title {
+  text-align: center;
+  width: 100%;
+  color: #00BF63;
+}
 
 .instructor-title { margin-bottom: 30px; }
 
@@ -992,7 +1018,12 @@ body { background: var(--white); }
   gap: 80px;
 }
 
-.instructor-card { text-align: center; }
+.instructor-card { 
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
 
 .instructor-card .card-banner {
   margin-bottom: 30px;
@@ -1028,9 +1059,30 @@ body { background: var(--white); }
   color: var(--onyx);
   font-family: var(--ff-poppins);
   font-size: var(--fs-2);
+  margin-bottom: 12px; /* Added spacing below name */
 }
 
 .instructor-card .card-subtitle { margin-bottom: 15px; }
+
+.view-button {
+  display: inline-block;
+  padding: 10px 30px;
+  background-color: #00BF63;
+  color: white;
+  text-decoration: none;
+  border-radius: 5px;
+  margin-top: 5px;
+  margin-bottom: 20px; /* Added spacing between button and next profile */
+  transition: all 0.3s ease;
+  font-weight: 500;
+  font-family: 'Poppins', sans-serif; /* Added this line */
+}
+
+.view-button:hover {
+  background-color: #009f52;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
 
 .card-social-list {
   display: flex;
@@ -1039,11 +1091,6 @@ body { background: var(--white); }
   gap: 12px;
 }
 
-.card-social-link {
-  color: var(--onyx);
-  font-size: 18px;
-}
-End of commented section */
 
 
 
@@ -1902,7 +1949,7 @@ End of commented section */
    * INSTRUCTOR
    */
   .instructor { 
-    padding-bottom: 175px;
+    padding-bottom: 50px;
     padding-top: 0px; 
   }
   /**
