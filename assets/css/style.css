@@ -209,21 +209,43 @@ body { background: var(--white); }
 }
 
 .header.active {
-  background: var(--cultured);
+  background: var(--cultured); /* Background color only when scrolled */
   box-shadow: 0 1px 3px hsla(0, 0%, 0%, 0.1);
   padding-block: 20px;
 }
 
 .header .container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 35px;
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
 
-.header .logo { width: 120px; }
+.header .logo { 
+  width: 160px;
+}
 
 .logo img { width: 100%; }
 
+/* Reduced spacing between navbar items */
+.navbar-list {
+  margin-bottom: 15px;
+  display: flex;
+  gap: 1.25rem; /* Reduced from 2rem */
+}
+
+.navbar-link {
+  color: var(--rich-black-fogra-29);
+  font-weight: var(--fw-500);
+  padding-block: 15px;
+  padding-inline: 5px; /* Added small horizontal padding */
+  font-family: var(--dm-sans);
+  white-space: nowrap;
+}
+
+/* Rest of your existing header styles */
 .menu-open-btn {
   font-size: 35px;
   color: var(--mango-tango);
@@ -263,15 +285,6 @@ body { background: var(--white); }
   margin-inline: auto;
 }
 
-.navbar-list { margin-bottom: 15px; }
-
-.navbar-link {
-  color: var(--rich-black-fogra-29);
-  font-weight: var(--fw-500);
-  padding-block: 15px;
-  font-family: var(--dm-sans);
-}
-
 .overlay {
   position: fixed;
   inset: 0;
@@ -286,6 +299,36 @@ body { background: var(--white); }
   pointer-events: all;
   opacity: 1;
 }
+
+/* Updated responsive breakpoints */
+@media (max-width: 1400px) {
+  .header .container {
+    max-width: 100%;
+    padding: 0 25px;
+  }
+  
+  .navbar-list {
+    gap: 1rem;
+  }
+}
+
+@media (max-width: 1200px) {
+  .header .container {
+    padding: 0 20px;
+  }
+  
+  .navbar-list {
+    gap: 0.75rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .navbar-list {
+    flex-direction: column;
+    gap: 0;
+  }
+}
+
 
 
 
