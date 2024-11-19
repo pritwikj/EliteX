@@ -956,7 +956,8 @@ body { background: var(--white); }
   margin-top: auto; /* Push the image to the bottom */
 }
 
-.programs-additional-info {
+
+/* .programs-additional-info {
   box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
   max-width: 850px;
   margin: 40px auto -20px;
@@ -978,7 +979,7 @@ body { background: var(--white); }
 
 .programs-additional-info p {
   font-family: var(--ff-poppins);
-  font-size: 22px; /* Increased from 20px, but not as large as 24px */
+  font-size: 22px; 
   font-weight: bold;
   line-height: 1.5;
   color: #00BF63;
@@ -986,16 +987,16 @@ body { background: var(--white); }
 }
 
 .programs-additional-info p:first-child {
-  margin-bottom: 12px; /* Slightly increased from 10px for better spacing */
-  font-size: 24px; /* Larger than before, but not as large as 28px */
+  margin-bottom: 12px; 
+  font-size: 24px; 
 }
 
 .programs-additional-info p:last-child {
-  font-size: 18px; /* Increased from 16px, but not as large as 20px */
+  font-size: 18px; 
   color: #000000;
   font-family: var(--ff-rubik);
   font-weight: normal;
-  line-height: 1.6; /* Kept for better readability */
+  line-height: 1.6; 
 }
 
 .programs-additional-info .btn-primary {
@@ -1026,7 +1027,8 @@ body { background: var(--white); }
   .programs-additional-info .btn-primary {
     align-self: flex-start;
   }
-}
+} */
+
 
 
 
@@ -1040,14 +1042,6 @@ body { background: var(--white); }
   margin-top: 40px;
 }
 
-.instructor .title-wrapper {
-  margin-bottom: 100px;
-  text-align: center;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
 .departments-title {
   text-align: center;
   width: 100%;
@@ -1055,6 +1049,23 @@ body { background: var(--white); }
 }
 
 .instructor-title { margin-bottom: 30px; }
+
+.instructor .title-wrapper {
+  margin-bottom: 100px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;  /* Add this to stack elements vertically */
+  justify-content: center;
+  align-items: center;
+}
+
+.instructor .section-text-it {
+  margin-top: 10px;    
+  margin-bottom: 110px;
+  max-width: 900px;    /* Reduced from 1000px that was in the original section-text-it class */
+  margin-left: auto;   /* These two margin auto rules ensure it stays centered */
+  margin-right: auto;
+}
 
 .instructor-list {
   display: grid;
