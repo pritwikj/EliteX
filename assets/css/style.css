@@ -594,6 +594,10 @@ body { background: var(--white); }
   border-top: 2px dashed #000;
   z-index: 1;
 }
+.highlight-text {
+  color: #f2c355;  /* This is the green color used in your site */
+  font-weight: bold;
+}
 
 .highlight.no-underline {
   background-color: #1A3D6B;
