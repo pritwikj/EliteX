@@ -510,96 +510,96 @@ body { background: var(--white); }
  * #STAT
 \*-----------------------------------*/
 
-.passion-project {
-  padding: var(--section-padding) 0;
-  background-color: var(--cultured);
-}
-
-.passion-project-title {
-  text-align: center;
-  color: #00BF63;
-  margin-top: 50px;
-  margin-bottom: 90px;
-}
-
-.passion-project-content {
-  font-family: var(--ff-rubik);
-  font-size: 16px;
-  background-color: #1A3D6B; /* Light gray color, adjust as needed */
-  padding: 30px 10px;
-  /* border-radius: 8px; */
-  /* width: 100vw;
-  margin: 0 auto; */
-  text-align: center;
-  /* position: relative;
-  left: 50%; 
-  right: 50%;
-  margin-left: -50vw;
-  margin-right: -50vw; */
-  margin-top: -80px;
+.stat-section {
   width: 100%;
+  background-color: #fcd34d;
+  padding: 1rem;
+  margin-top: -40px;
 }
 
-
-.passion-project-image {
-  flex: 1;
-}
-
-.siblings-image {
-  width: 77%;
-  max-width: 500px;
-  border-radius: 10px;
-  display: block; /* Ensure it's a block-level element */
-  margin: 0 auto; /* Center the image horizontally */
-}
-
-
-.passion-project-text {
-  flex: 1;
-  font-size: 20.5px;
-  font-weight: bold;
-  color: white;
-  line-height: 1.8; 
-  text-align: center;
-  margin-top: 0px;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  word-wrap: break-word;
-  overflow-wrap: break-word;
-}
-
-
-
-.passion-project-text .highlight {
-  background-color: #1A3D6B;
-  color: white;
-  padding: 2px 5px;
-  border-radius: 3px;
-}
-
-.passion-project-steps {
+.stat-container {
+  max-width: 1200px;
+  margin: 0 auto;
   display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
-  margin-top: 120px;
-  position: relative;
+  align-items: center;
+  gap: 2rem;
+  padding: 15px 10px;
 }
 
-.passion-project-steps::before {
-  content: '';
-  position: absolute;
-  top: 110px;
-  left: 10%;
-  right: 10%;
-  height: 2px;
-  border-top: 2px dashed #000;
-  z-index: 1;
+.stat-number {
+  width: 25%;
 }
+
+.percentage {
+  font-size: 60px; /* Reduced from 80px */
+  font-weight: 700;
+  color: #1a1f36;
+  line-height: 1;
+  font-family: var(--ff-rubik);
+}
+
+.label {
+  font-size: 0.875rem; /* Reduced from 1.125rem */
+  font-weight: 700;
+  color: #1a1f36;
+  margin-top: 0.5rem;
+  font-family: var(--ff-rubik);
+}
+
+.stat-content {
+  width: 75%;
+}
+
+.stat-heading {
+  font-size: 1.5rem; /* Reduced from 1.875rem */
+  font-weight: 700;
+  color: #1a1f36;
+  margin-bottom: 0.5rem; /* Reduced from 1rem */
+  line-height: 1.2;
+  font-family: var(--ff-rubik);
+}
+
+.stat-subtext {
+  font-size: 1rem; /* Reduced from 1.125rem */
+  color: #1a1f36;
+  font-weight: bold;
+  font-family: var(--ff-rubik);
+}
+
+.stat-schools {
+  font-size: 0.875rem; /* Smaller font size */
+  color: #1a1f36;
+  font-family: var(--ff-rubik);
+  margin-bottom: 0.5rem;
+  font-weight: 500; /* Slightly less bold than the main heading */
+}
+
 .highlight-text {
-  color: #f2c355;  /* This is the green color used in your site */
+  color: #f2c355;
   font-weight: bold;
 }
 
+/* Responsive styling */
+@media (max-width: 768px) {
+  .stat-container {
+    flex-direction: column;
+    text-align: center;
+  }
+  
+  .stat-number, .stat-content {
+    width: 100%;
+  }
+  
+  .percentage {
+    font-size: 60px;
+  }
+  
+  .stat-heading {
+    font-size: 1.5rem;
+  }
+}
+
+/* Keep any utility classes that might be needed */
 .highlight.no-underline {
   background-color: #1A3D6B;
   color: white;
@@ -616,107 +616,13 @@ body { background: var(--white); }
   display: none;
 }
 
-.step {
-  text-align: center;
-  position: relative;
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding: 0 20px;
-}
-
-.step-icon {
-  width: 90px;
-  height: 90px;
-  margin-bottom: 40px;
-  margin-top: 40px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  position: relative;
-  z-index: 2;
-  background-color: #f9fafb;
-  padding: 10px;
-}
-
-
-.step-icon::before {
-  content: '';
-  position: absolute;
-  top: -10px;
-  left: -10px;
-  right: -10px;
-  bottom: -10px;
-  background-color: #f9fafb;
-  z-index: -1;
-  border-radius: 50%;
-}
-
-.step-text {
-  font-family: var(--ff-rubik);
-  font-size: 20px;
-  font-weight: var(--fw-500);
-  color: var(--rich-black-fogra-29);
-  margin-top: 10px;
-}
-
-.step-icon img {
-  width: 170px;
-  height: 170px;
-}
-
-.admission-ready-step .step-icon {
-  position: relative;
-  margin-top: 39px;
-}
-
-.admission-ready-step .step-text {
-  margin-top: 11px;
-}
-
-/* Remove individual step lines */
-.step:not(:last-child)::after {
-  display: none;
-}
-
-@media (max-width: 768px) {
-  .passion-project-steps {
-    flex-direction: column;
-    align-items: flex-start;
-  }
-  
-  .passion-project-steps::before {
-    top: 60px;
-    left: 45px;
-    width: 2px;
-    height: calc(100% - 120px);
-    border-top: none;
-    border-left: 2px dashed #000;
-  }
-  
-  .step {
-    width: 100%;
-    margin-bottom: 40px;
-    text-transform: capitalize;
-  }
-  
-  .step-text {
-    margin-top: 0;
-  }
-  
-  .step-icon.admission-ready {
-    margin-top: 0;
-  }
-}
-
 
 /*-----------------------------------*\
  * #HOW IT WORKS
 \*-----------------------------------*/
 
 .how-it-works {
-  padding: var(--section-padding) 0 5px; /* Reduced bottom padding */
+  padding: var(--section-padding) 0 50px; /* Reduced bottom padding */
   background-color: var(--cultured);
 }
 
