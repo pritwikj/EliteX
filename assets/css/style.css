@@ -339,7 +339,7 @@ body { background: var(--white); }
 
 .hero {
   background: var(--gradient);
-  padding: 170px 0 calc(var(--section-padding) + 20px);
+  padding: 155px 0 calc(var(--section-padding) + 20px);
 }
 
 .hero-banner { margin-bottom: 40px;}
@@ -386,16 +386,23 @@ body { background: var(--white); }
 
  
 
-
-.hero-title { 
+.hero-title {
   margin-bottom: 20px;
-  color: #00BF63;
-  width: 120%;
+  color: #233c68;
+  width: 180%;
+  line-height: 1.1;
+  font-size: 3.7rem; /* Adjust this value to make it smaller or larger */
+}
+
+.hero-title br {
+  display: block;
+  content: "";
+  margin-bottom: 8px; /* Adjust this value to control spacing between lines */
 }
 
 .hero .section-text { 
   margin-bottom: 45px; 
-  font-size: 14px;
+  font-size: 12px;
 }
 
 .btn-secondary {
@@ -513,7 +520,7 @@ body { background: var(--white); }
 .stat-section {
   width: 100%;
   background-color: #fcd34d;
-  padding: 1rem;
+  padding: 0.75rem 0.5rem 0.4rem;
   margin-top: -40px;
 }
 
@@ -523,12 +530,20 @@ body { background: var(--white); }
   display: flex;
   align-items: center;
   gap: 2rem;
-  padding: 15px 10px;
+  padding: 10px 5px;
 }
 
 .stat-number {
   width: 25%;
+  margin-left: 50px; /* This shifts only the percentage and "TOP 5 CHOICE" */
 }
+
+.stat-content {
+  width: 75%;
+  margin-left: -50px; /* This compensates for the stat-number shift, keeping the text in place */
+}
+
+/* Rest of the CSS remains unchanged */
 
 .percentage {
   font-size: 60px; /* Reduced from 80px */
@@ -544,10 +559,6 @@ body { background: var(--white); }
   color: #1a1f36;
   margin-top: 0.5rem;
   font-family: var(--ff-rubik);
-}
-
-.stat-content {
-  width: 75%;
 }
 
 .stat-heading {
@@ -567,7 +578,7 @@ body { background: var(--white); }
 }
 
 .stat-schools {
-  font-size: 0.875rem; /* Smaller font size */
+  font-size: 1rem; /* Smaller font size */
   color: #1a1f36;
   font-family: var(--ff-rubik);
   margin-bottom: 0.5rem;
@@ -826,19 +837,18 @@ body { background: var(--white); }
 .programs-card {
   background: var(--white);
   box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
-  padding: 30px;
+  padding: 30px 30px 60px;
   border-radius: 30px;
   display: flex;
   flex-direction: column;
   align-items: center;
   text-align: center;
-  width: 45%;
+  width: 60%; /* Increased from 45% to 60% */
   min-width: 300px;
-  height: 100%; /* Ensure both cards have the same height */
 }
 
 .programs-card .card-title {
-  color: #00BF63;
+  color: #1A3D6B;
   font-size: 28px;
   margin-bottom: 20px;
   align-self: center; /* Center the title */
@@ -855,6 +865,7 @@ body { background: var(--white); }
   line-height: 1.6;
   margin-bottom: 25px;
   color: #000;
+  font-size: 17px;
 }
 
 .programs-card .btn-primary {
@@ -1593,7 +1604,7 @@ body { background: var(--white); }
 .programs-list {
   display: flex;
   justify-content: center;
-  gap: 30px;
+  gap: 50px;
   max-width: 1200px;
   margin: 0 auto;
 }
@@ -1612,7 +1623,7 @@ body { background: var(--white); }
 }
 
 .programs-card .card-title {
-  color: #00BF63;
+  color: #1A3D6B;
   font-size: 28px;
   margin-bottom: 20px;
 }
@@ -1829,11 +1840,6 @@ body { background: var(--white); }
   color: #00BF63;
 }
 
-.programs-title {
-  text-align: center;
-  margin-bottom: 40px;
-  color: #00BF63;
-}
 
 .testimonials-grid {
   max-width: 1200px;
