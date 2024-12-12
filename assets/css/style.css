@@ -1,5 +1,3 @@
-
-
 :root {
 
   /**
@@ -698,17 +696,17 @@ body { background: var(--white); }
 }
 
 
-/* Examples Section Styles */
+/* Examples Section Styles - Updated */
 .examples-section {
   background-color: #204f33;
-  padding: 50px 0;
+  padding: 45px 0 50px; /* Reduced top padding from 60px to 45px */
 }
 
 .examples-section-title {
   text-align: center;
   color: #ffffff;
   font-size: 40px;
-  margin-bottom: 20px;
+  margin-bottom: 20px; /* Reduced from 25px */
   font-family: var(--ff-poppins), sans-serif;
   font-weight: var(--fw-700);
 }
@@ -716,127 +714,117 @@ body { background: var(--white); }
 .examples-section-description {
   text-align: center;
   max-width: 800px;
-  margin: 0 auto 30px;
-  font-size: 18px;
+  margin: 0 auto 35px; /* Reduced from 50px */
+  font-size: 20px;
   color: #ffffff;
   font-family: var(--ff-rubik), sans-serif;
+  line-height: 1.6;
+  padding: 0 20px;
 }
 
 .examples-section-content {
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-  margin: -15px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 25px;
+  padding: 0 20px;
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
 .example-item {
-  flex: 1 1 calc(25% - 30px);
-  min-width: 250px;
-  max-width: 400px;
   background-color: #fff;
-  padding: 0;
-  border-radius: 10px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  margin: 15px;
+  border-radius: 12px;
   overflow: hidden;
-  height: auto;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.12);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  height: 100%;
   display: flex;
   flex-direction: column;
-  position: relative;
+}
+
+.example-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 25px rgba(0, 0, 0, 0.2);
 }
 
 .example-image {
   width: 100%;
   height: 250px;
-  overflow: hidden;
-  margin: 0;
-  padding: 20px;
-  background-color: #fff;
+  padding: 15px;
+  background-color: #f8f9fa;
 }
 
 .example-image img {
   width: 100%;
   height: 100%;
-  object-fit: contain;
-  margin: 0 auto;
-  display: block;
+  object-fit: cover;
+  border-radius: 10px;
+  transition: transform 0.3s ease;
+}
+
+.example-item:hover .example-image img {
+  transform: scale(1.03);
 }
 
 .example-student-container {
   padding: 20px;
-  position: relative;
+  flex-grow: 1;
   display: flex;
   flex-direction: column;
-  height: 250px;
-}
-
-.example-university {
-  color: #1A3D6B;
-  font-size: 24px;
-  font-family: var(--ff-rubik), sans-serif;
-  font-weight: bold;
-  position: absolute;
-  left: 20px;
-  bottom: 140px;
 }
 
 .example-student-name {
-  color: #204f33;
-  font-size: 16px;
-  font-weight: normal;
+  color: #1A3D6B;
+  font-size: 20px;
+  font-weight: bold;
   font-family: var(--ff-rubik), sans-serif;
-  position: absolute;
-  left: 20px;
-  bottom: 120px;
+  margin-bottom: 4px;
+}
+
+.example-university {
+  color: #000000;
+  font-size: 16px;
+  font-weight: 500;
+  font-family: var(--ff-rubik), sans-serif;
+  margin-bottom: 12px;
 }
 
 .example-item p {
-  color: #666;
-  font-size: 14px;
-  line-height: 1.6;
-  position: absolute;
-  left: 20px;
-  bottom: 20px;
-  max-width: 90%;
+  color: #555;
+  font-size: 15px;
+  line-height: 1.5;
+  font-family: var(--ff-rubik), sans-serif;
+  margin: 0;
 }
 
+/* Responsive adjustments */
 @media (max-width: 1200px) {
-  .example-item {
-    flex-basis: calc(33.33% - 30px);
-  }
-  
-  .example-student-container {
-    height: 280px;
-  }
-}
-
-@media (max-width: 992px) {
-  .example-item {
-    flex-basis: calc(50% - 30px);
+  .examples-section-content {
+    grid-template-columns: repeat(2, 1fr);
+    max-width: 900px;
   }
 }
 
 @media (max-width: 768px) {
-  .example-item {
-    flex-basis: 100%;
+  .examples-section {
+    padding: 30px 0 35px; /* Reduced top padding from 40px to 30px */
   }
-  
+
+  .examples-section-content {
+    grid-template-columns: 1fr;
+    max-width: 400px;
+  }
+
   .example-image {
-    height: 250px;
+    height: 220px;
   }
-  
-  .example-student-container {
-    height: auto;
-    padding-bottom: 100px;
+
+  .examples-section-title {
+    font-size: 32px;
   }
-  
-  .example-university,
-  .example-student-name,
-  .example-item p {
-    position: relative;
-    left: 0;
-    bottom: auto;
-    margin-bottom: 15px;
+
+  .examples-section-description {
+    font-size: 18px;
   }
 }
 
