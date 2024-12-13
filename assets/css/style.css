@@ -2421,7 +2421,7 @@ body { background: var(--white); }
 /* Add this to your existing mobile media query section */
 @media screen and (max-width: 768px) {
   .examples-section-content .example-item .frances-image img {
-    object-position: center 40% !important;
+    object-position: center 45% !important;
   }
   
   .examples-section-content .example-item .tyler-image img {
