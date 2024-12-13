@@ -413,7 +413,6 @@ body { background: var(--white); }
 
 
 
-
 /* logo Carousel */
 .logo-carousel {
   padding: 15px 0;
@@ -2064,22 +2063,27 @@ body { background: var(--white); }
     height: 150px;
   }
   .hero {
-    padding: 140px 0 var(--section-padding);
+    padding: 120px 0 40px; /* Reduced padding */
   }
-  .programs-card .card-image img{
+  .hero-title {
+    font-size: 2.5rem; /* Smaller font size for mobile */
+    text-align: center;
+    margin-bottom: 15px;
+  }
+  .hero-content {
+    text-align: center;
+    padding: 0 15px;
+  }
+  .hero-banner {
+    margin: 20px auto 30px;
+  }
+  .hero-banner img {
     width: 100%;
-  }
-  .programs-card .card-image {
+    margin-left: 0;
     height: auto;
   }
-  .testimonials>.container {
-    padding-left: 0;
-    padding-right: 0;
-  }
-  .header-container{
-    padding-left: 15px;
-    padding-right: 15px;
-    text-align: center;
+  .hylt {
+    font-size: 1.5em; /* Smaller font size for mobile */
   }
 }
 @media screen and (max-width: 550px) {
@@ -2110,5 +2114,295 @@ body { background: var(--white); }
 @media screen and (max-width: 768px) {
   .testimonials-grid {
     grid-template-columns: 1fr;
+  }
+}
+
+/* Mobile stats section adjustments */
+@media screen and (max-width: 768px) {
+  .stat-section {
+    padding: 20px 15px;
+  }
+
+  .stat-container {
+    flex-direction: column;
+    gap: 1rem;
+    text-align: center;
+  }
+
+  .stat-number {
+    width: 100%;
+    margin-left: 0;
+  }
+
+  .stat-content {
+    width: 100%;
+    margin-left: 0;
+  }
+
+  .percentage {
+    font-size: 40px;
+  }
+
+  .stat-heading {
+    font-size: 1.25rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .stat-schools {
+    font-size: 0.875rem;
+  }
+}
+
+/* Mobile navigation adjustments */
+@media screen and (max-width: 768px) {
+  .navbar {
+    background: #ffffff;
+    padding: 60px 20px;
+  }
+
+  .navbar-list {
+    margin-bottom: 30px;
+  }
+
+  .navbar-link {
+    color: var(--rich-black-fogra-29);
+    font-size: 1.1rem;
+    padding: 12px 0;
+    display: block;
+    text-align: center;
+  }
+
+  .menu-close-btn {
+    padding: 15px;
+    font-size: 24px;
+  }
+
+  .header .btn-secondary {
+    margin: 0 auto;
+    width: fit-content;
+  }
+}
+
+/* Mobile How it Works section adjustments */
+@media screen and (max-width: 768px) {
+  .how-it-works {
+    padding: 40px 0 30px;
+  }
+
+  .how-it-works-title {
+    font-size: 28px;
+    margin-bottom: 20px;
+  }
+
+  .how-it-works-subtitle {
+    font-size: 16px;
+    margin-bottom: 30px;
+    padding: 0 20px;
+  }
+
+  .how-it-works-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+    padding: 0 15px;
+  }
+
+  .how-it-works-box {
+    padding: 20px;
+  }
+
+  .box-title {
+    font-size: 18px;
+  }
+
+  .box-content li {
+    font-size: 16px;
+  }
+}
+
+/* Mobile Featured Students section adjustments */
+@media screen and (max-width: 768px) {
+  .examples-section {
+    padding: 40px 0;
+  }
+
+  .examples-section-title {
+    font-size: 28px;
+    margin-bottom: 15px;
+  }
+
+  .examples-section-description {
+    font-size: 16px;
+    margin-bottom: 25px;
+  }
+
+  .examples-section-content {
+    grid-template-columns: 1fr;
+    gap: 25px;
+    padding: 0 15px;
+  }
+
+  .example-image {
+    height: 200px;
+  }
+
+  .example-student-name {
+    font-size: 18px;
+  }
+
+  .example-university {
+    font-size: 14px;
+  }
+
+  .example-item p {
+    font-size: 14px;
+  }
+}
+
+/* General mobile improvements */
+@media screen and (max-width: 768px) {
+  :root {
+    --section-padding: 60px;
+    --fs-1: 32px;
+    --fs-2: 24px;
+    --fs-3: 20px;
+    --fs-4: 18px;
+    --fs-5: 16px;
+  }
+
+  .container {
+    padding-inline: 15px;
+  }
+
+  .btn {
+    padding: 12px 24px;
+  }
+
+  .section-text-it {
+    font-size: 16px;
+    margin-bottom: 30px;
+  }
+
+  /* Improve touch targets */
+  .btn,
+  .navbar-link,
+  .footer-link {
+    min-height: 44px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  /* Improve spacing */
+  section {
+    margin-bottom: 40px;
+  }
+
+  /* Better readability */
+  p, .section-text {
+    line-height: 1.6;
+  }
+}
+
+/* Mobile Elite Services section adjustments */
+@media screen and (max-width: 768px) {
+  .programs {
+    padding: 40px 0;
+  }
+
+  .programs-title {
+    font-size: 28px;
+    margin-bottom: 15px;
+  }
+
+  .programs-list {
+    flex-direction: column;
+    gap: 30px;
+    padding: 0 15px;
+  }
+
+  .programs-card {
+    width: 100%;
+    padding: 25px 20px 40px;
+    margin: 0;
+  }
+
+  .programs-card .card-title {
+    font-size: 24px;
+    margin-bottom: 15px;
+  }
+
+  .programs-card .card-text {
+    font-size: 16px;
+    margin-bottom: 20px;
+  }
+
+  .programs-card .card-image {
+    width: 100%;
+    height: 160px;
+    margin-top: 20px;
+  }
+
+  .programs-card .card-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .section-text-it {
+    font-size: 16px;
+    padding: 0 20px;
+    margin-bottom: 30px;
+  }
+
+  /* Adjust button size and spacing */
+  .programs-card .btn-primary {
+    padding: 10px 20px;
+    font-size: 16px;
+    margin-bottom: 20px;
+  }
+
+  /* Fix container padding */
+  .programs .container {
+    padding: 0 15px;
+  }
+
+  /* Improve spacing between elements */
+  .programs-card .card-content {
+    gap: 15px;
+  }
+}
+
+/* Additional adjustments for very small screens */
+@media screen and (max-width: 375px) {
+  .programs-card {
+    padding: 20px 15px 30px;
+  }
+
+  .programs-card .card-title {
+    font-size: 22px;
+  }
+
+  .programs-card .card-text {
+    font-size: 15px;
+  }
+
+  .programs-card .card-image {
+    height: 140px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .hero-content {
+    text-align: center;
+    padding: 0 15px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .hero-content .btn-primary {
+    margin: 0 auto;
+    display: inline-flex;
+    justify-content: center;
   }
 }
