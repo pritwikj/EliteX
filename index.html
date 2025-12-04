@@ -1,795 +1,1102 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>EliteX</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The T20 Intensive | Elite Minds</title>
+    <!-- Fonts: Playfair Display for elegance, Manrope for modern readability -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/png" href="./images/favicon-32x32.png" sizes="32x32" />
+    
+    <!-- Meta Pixel Code -->
+    <script>
+    !function(f,b,e,v,n,t,s)
+    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+    n.queue=[];t=b.createElement(e);t.async=!0;
+    t.src=v;s=b.getElementsByTagName(e)[0];
+    s.parentNode.insertBefore(t,s)}(window, document,'script',
+    'https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', '3804960976412828');
+    fbq('track', 'PageView');
+    </script>
+    <noscript><img height="1" width="1" style="display:none"
+    src="https://www.facebook.com/tr?id=3804960976412828&ev=PageView&noscript=1"
+    /></noscript>
+    <!-- End Meta Pixel Code -->
 
-  <!-- 
-    - favicon
-  -->
-  <link rel="shortcut icon" href="./assets/images/favicon.svg" type="image/svg+xml">
+    <style>
+        @media (prefers-reduced-motion: no-preference) {
+            html {
+                scroll-behavior: smooth;
+            }
+        }
 
-  <!-- 
-    - custom css link
-  -->
-  <link rel="stylesheet" href="./assets/css/style.css">
+        :root {
+            --bg-color: #0a0a0a;
+            --text-color: #f0f0f0;
+            --accent-color: #C9A465; /* Muted Gold */
+            --accent-hover: #b08d55;
+            --surface-color: #141414;
+            --surface-hover: #1f1f1f;
+            --border-color: #333;
+            --serif-font: 'Playfair Display', serif;
+            --sans-font: 'Manrope', sans-serif;
+        }
 
-  <!-- 
-    - google font link
-  -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link
-    href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@500&family=Poppins:wght@600;700&family=Rubik:wght@400;500&display=swap"
-    rel="stylesheet">
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: var(--sans-font);
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            line-height: 1.6;
+            overflow-x: hidden;
+            font-weight: 300;
+        }
+
+        /* --- Typography --- */
+        h1, h2, h3, h4 {
+            font-family: var(--serif-font);
+            font-weight: 400;
+            line-height: 1.2;
+        }
+
+        .text-accent {
+            color: var(--accent-color);
+        }
+
+        .uppercase-tracking {
+            text-transform: uppercase;
+            letter-spacing: 0.15em;
+            font-size: 0.85rem;
+            font-weight: 500;
+            color: #888;
+        }
+
+        /* --- Header (Custom override for this page) --- */
+        .header {
+            background-color: rgba(25, 40, 34, 0.95);
+            padding: 0px 48px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            border-bottom: 1px solid var(--border-color);
+            backdrop-filter: blur(10px);
+        }
+
+        .logo {
+            width: 95px;
+            height: auto;
+            /* filter: brightness(0) invert(1); Remove filter to show original colors */
+            opacity: 0.9;
+            margin-top: 4px;
+            margin-bottom: -4px;
+        }
+
+        .header-nav {
+            display: flex;
+            gap: 24px;
+        }
+
+        .header-link {
+            font-family: var(--sans-font);
+            font-size: 14px;
+            color: #ccc;
+            text-decoration: none;
+            transition: color 0.3s ease;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-weight: 500;
+        }
+
+        .header-link:hover, .header-link.active {
+            color: var(--accent-color);
+        }
+
+        /* --- Hero Section --- */
+        .hero-section {
+            min-height: 75vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 100px 24px 60px;
+            background: #192822;
+            position: relative;
+        }
+
+        .hero-section::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI0MCIgaGVpZ2h0PSI0MCIgdmlld0JveD0iMCAwIDQwIDQwIj4gPGc+IDxwYXRoIGQ9Ik0wIDBoNDB2NDBIMHoiIGZpbGw9Im5vbmUiLz4gPHBhdGggZD0iTTAgNDBoNDBWMDBIMHoiIGZpbGw9IiMxYTFhMWEiIG9wYWNpdHk9IjAuMDUiLz4gPC9nPiA8L3N2Zz4=');
+            opacity: 0.5;
+            pointer-events: none;
+        }
+
+        .hero-kicker {
+            margin-bottom: 24px;
+            border: 1px solid var(--accent-color);
+            padding: 8px 16px;
+            border-radius: 50px;
+            color: var(--accent-color);
+            display: inline-block;
+            font-size: 0.8rem;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+        }
+
+        .hero-title {
+            font-size: 4rem;
+            margin-bottom: 24px;
+            max-width: 900px;
+            color: #fff;
+        }
+        
+        .hero-title i {
+            font-family: var(--serif-font);
+            font-weight: 400;
+            color: var(--accent-color);
+        }
+
+        .hero-subtitle {
+            font-size: 1.25rem;
+            color: #aaa;
+            max-width: 600px;
+            margin: 0 auto 48px;
+            font-weight: 300;
+        }
+
+        .btn-primary {
+            background-color: var(--accent-color);
+            color: #000;
+            padding: 16px 40px;
+            border-radius: 2px;
+            text-decoration: none;
+            font-weight: 600;
+            letter-spacing: 0.5px;
+            transition: all 0.3s ease;
+            border: 1px solid var(--accent-color);
+            text-transform: uppercase;
+            font-size: 0.9rem;
+        }
+
+        .btn-primary:hover {
+            background-color: transparent;
+            color: var(--accent-color);
+            transform: translateY(-2px);
+        }
+
+        /* --- Deadline Bar --- */
+        .deadline-bar {
+            width: 100%;
+            background: #111;
+            border-top: 1px solid var(--border-color);
+            border-bottom: 1px solid var(--border-color);
+            padding: 24px;
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            flex-wrap: wrap;
+        }
+
+        .deadline-item {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .deadline-label {
+            color: #888;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        .deadline-date {
+            color: #fff;
+            font-weight: 600;
+            font-family: var(--serif-font);
+        }
+
+        /* --- Content Sections --- */
+        .section {
+            padding: 100px 24px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .section-title {
+            font-size: 2.5rem;
+            margin-bottom: 16px;
+        }
+
+        .section-desc {
+            color: #888;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        /* --- Grid Layouts --- */
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 40px;
+        }
+
+        .feature-card {
+            background: var(--surface-color);
+            padding: 48px 32px;
+            border: 1px solid var(--border-color);
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .feature-card:hover {
+            background: var(--surface-hover);
+            border-color: var(--accent-color);
+        }
+
+        .feature-card::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; width: 100%; height: 2px;
+            background: var(--accent-color);
+            transform: scaleX(0);
+            transform-origin: left;
+            transition: transform 0.4s ease;
+        }
+
+        .feature-card:hover::before {
+            transform: scaleX(1);
+        }
+
+        .feature-icon {
+            font-size: 24px;
+            color: var(--accent-color);
+            margin-bottom: 24px;
+        }
+
+        .feature-title {
+            font-size: 1.5rem;
+            margin-bottom: 16px;
+            color: #fff;
+        }
+
+        .feature-text {
+            color: #aaa;
+            font-size: 0.95rem;
+            line-height: 1.7;
+        }
+
+        /* --- Pricing/Investment --- */
+        .pricing-section {
+            background: #ffffff;
+            border-top: 1px solid var(--border-color);
+            width: 100%;
+            margin-left: 0;
+            margin-right: 0;
+            max-width: none;
+            padding-top: 60px !important;
+        }
+
+        .pricing-section .section-title {
+            color: #000;
+        }
+
+        .pricing-section .uppercase-tracking {
+            color: #666;
+        }
+
+        .pricing-section .section-header,
+        .pricing-section .feature-grid {
+            max-width: 1200px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        #investment {
+            scroll-margin-top: 90px;
+        }
+
+        .pricing-card {
+            background: #f9f9f9;
+            padding: 40px;
+            border: 1px solid #ddd;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            transition: transform 0.3s ease;
+        }
+
+        .pricing-card.highlight {
+            border-color: var(--accent-color);
+            background: #fafaf9;
+            border-width: 2px;
+        }
+
+        .pricing-tier {
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: #888;
+            margin-bottom: 24px;
+        }
+
+        .pricing-amount {
+            font-family: var(--serif-font);
+            font-size: 2.2rem;
+            color: #000;
+            margin-bottom: 8px;
+        }
+
+        .pricing-save {
+            color: var(--accent-color);
+            font-size: 0.9rem;
+            margin-bottom: 32px;
+        }
+
+        .pricing-section .pricing-tier {
+            color: #666;
+        }
+
+        .pricing-features {
+            list-style: none;
+            margin-bottom: 40px;
+            width: 100%;
+            flex: 1;
+        }
+
+        .pricing-features li {
+            padding: 12px 0;
+            border-bottom: 1px solid #ddd;
+            color: #333;
+            font-size: 0.9rem;
+        }
+        
+        .pricing-features li:last-child {
+            border-bottom: none;
+        }
+
+        .btn-outline {
+            background: transparent;
+            color: #000;
+            border: 1px solid #000;
+            padding: 14px 30px;
+            text-decoration: none;
+            text-transform: uppercase;
+            font-size: 0.8rem;
+            letter-spacing: 1px;
+            transition: all 0.3s;
+        }
+
+        .btn-outline:hover {
+            background: #000;
+            color: #fff;
+        }
+
+        .pricing-card.highlight .btn-outline {
+            background: var(--accent-color);
+            border-color: var(--accent-color);
+            color: #000;
+        }
+        
+        .pricing-card.highlight .btn-outline:hover {
+            background: transparent;
+            color: var(--accent-color);
+        }
+
+        /* --- FAQ --- */
+        .faq-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .faq-item {
+            border-bottom: 1px solid var(--border-color);
+            padding: 24px 0;
+        }
+
+        .faq-question {
+            font-size: 1.2rem;
+            color: #fff;
+            margin-bottom: 12px;
+            font-family: var(--serif-font);
+        }
+
+        .faq-answer {
+            color: #999;
+        }
+
+        /* --- Testimonial Carousel --- */
+        .testimonial-section {
+            padding: 50px 0 70px 0;
+            margin-top: -30px;
+            background: var(--bg-color);
+            overflow: hidden;
+        }
+
+        .testimonial-section .section-header {
+            max-width: 1200px;
+            margin: 0 auto 36px;
+            padding: 0 24px;
+        }
+
+        .testimonial-section .section-title {
+            font-size: 2rem;
+        }
+
+        .testimonial-carousel {
+            width: 100%;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .testimonial-track {
+            display: flex;
+            gap: 18px;
+            animation: testimonialScroll 40s linear infinite;
+            width: max-content;
+        }
+
+        .testimonial-track:hover {
+            animation-play-state: paused;
+        }
+
+        @keyframes testimonialScroll {
+            0% {
+                transform: translateX(0);
+            }
+            100% {
+                transform: translateX(-50%);
+            }
+        }
+
+        .testimonial-card {
+            flex-shrink: 0;
+            width: 320px;
+            background: var(--surface-color);
+            border: 1px solid var(--border-color);
+            padding: 28px;
+            display: flex;
+            flex-direction: column;
+            gap: 18px;
+            transition: border-color 0.3s ease;
+        }
+
+        .testimonial-card:hover {
+            border-color: var(--accent-color);
+        }
+
+        .testimonial-quote {
+            font-family: var(--serif-font);
+            font-size: 0.95rem;
+            font-style: italic;
+            color: #ccc;
+            line-height: 1.6;
+            position: relative;
+        }
+
+        .testimonial-quote::before {
+            content: '"';
+            font-size: 2.2rem;
+            color: var(--accent-color);
+            position: absolute;
+            top: -14px;
+            left: -8px;
+            opacity: 0.5;
+            font-family: var(--serif-font);
+        }
+
+        .testimonial-author {
+            display: flex;
+            flex-direction: column;
+            gap: 3px;
+            padding-top: 12px;
+            border-top: 1px solid var(--border-color);
+            margin-top: auto;
+        }
+
+        .author-name {
+            font-weight: 500;
+            color: #fff;
+            font-size: 0.9rem;
+        }
+
+        .author-info {
+            font-size: 0.75rem;
+            color: var(--accent-color);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        @media (max-width: 768px) {
+            .testimonial-card {
+                width: 260px;
+                padding: 22px;
+            }
+
+            .testimonial-quote {
+                font-size: 0.9rem;
+            }
+
+            .testimonial-section {
+                padding: 50px 0;
+            }
+        }
+
+        /* --- Footer Status --- */
+        .status-indicator {
+            position: fixed;
+            bottom: 32px;
+            right: 32px;
+            background: rgba(20, 20, 20, 0.9);
+            backdrop-filter: blur(10px);
+            border: 1px solid var(--border-color);
+            padding: 16px 24px;
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            border-radius: 4px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+            z-index: 900;
+        }
+
+        .status-dot {
+            width: 8px;
+            height: 8px;
+            background-color: var(--accent-color);
+            border-radius: 50%;
+            box-shadow: 0 0 10px var(--accent-color);
+            animation: pulse 2s infinite;
+        }
+
+        .status-text {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .status-label {
+            font-size: 0.7rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: #666;
+        }
+
+        .status-value {
+            font-size: 0.9rem;
+            color: #fff;
+            font-weight: 500;
+        }
+
+        @keyframes pulse {
+            0% { opacity: 1; }
+            50% { opacity: 0.4; }
+            100% { opacity: 1; }
+        }
+        
+        .menu-toggle {
+            display: none;
+            background: transparent;
+            border: none;
+            color: #fff;
+            font-size: 24px;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero-title { font-size: 2.5rem; }
+            .header { padding: 6px 20px; }
+            .header-nav { display: none; }
+            .deadline-bar { flex-direction: column; gap: 16px; text-align: center; }
+            .status-indicator { bottom: 0; right: 0; left: 0; border-radius: 0; justify-content: center; }
+            
+            .menu-toggle { display: block; }
+            
+            .header-nav.open {
+                display: flex;
+                flex-direction: column;
+                position: absolute;
+                top: 70px;
+                right: 0;
+                left: 0;
+                background: #0a0a0a;
+                padding: 20px;
+                border-bottom: 1px solid #333;
+                text-align: center;
+            }
+        }
+
+        /* --- Mentors Section --- */
+        .mentors-section {
+            border-top: 1px solid var(--border-color);
+            background-color: #ffffff !important;
+            width: 100%;
+            margin-left: 0;
+            margin-right: 0;
+        }
+
+        .mentors-section .section-title {
+            color: #000;
+        }
+
+        .mentors-section .mentor-name {
+            color: #000;
+        }
+
+        .mentors-section .mentor-photo {
+            border-color: #ddd;
+        }
+
+        .mentors-section .mentor-card-static:hover .mentor-photo {
+            border-color: var(--accent-color);
+        }
+
+        .mentors-section .university-logo-container {
+            border-top-color: #ddd;
+        }
+
+        .mentors-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 60px 40px;
+            max-width: 1200px;
+            margin: 0 auto 60px;
+            width: 100%;
+        }
+
+        .mentor-card-static {
+            text-align: center;
+            transition: transform 0.3s ease, opacity 0.3s ease;
+        }
+
+        .mentor-card-static:hover {
+            transform: translateY(-8px);
+        }
+
+        .mentor-photo {
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            object-fit: cover;
+            object-position: center 20%;
+            border: 2px solid var(--border-color);
+            transition: border-color 0.3s ease;
+            margin: 0 auto 20px;
+            display: block;
+        }
+
+        .mentor-card-static:hover .mentor-photo {
+            border-color: var(--accent-color);
+        }
+
+        .mentor-name {
+            font-family: var(--serif-font);
+            font-size: 1.3rem;
+            color: #fff;
+            margin-bottom: 8px;
+            font-weight: 600;
+        }
+
+        .mentor-credentials {
+            color: var(--accent-color);
+            font-size: 0.95rem;
+            font-weight: 500;
+            letter-spacing: 0.02em;
+        }
+
+        .university-logo-container {
+            text-align: center;
+            padding-top: 40px;
+            border-top: 1px solid var(--border-color);
+            margin-top: 60px;
+            display: flex;
+            justify-content: center;
+            width: 100%;
+            max-width: 1200px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .university-logo {
+            max-width: 1000px;
+            height: auto;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 1024px) {
+            .mentors-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 48px 32px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .mentors-section {
+                padding: 60px 20px;
+            }
+
+            .mentors-grid {
+                grid-template-columns: 1fr;
+                gap: 48px;
+                margin-bottom: 40px;
+            }
+
+            .mentor-photo {
+                width: 180px;
+                height: 180px;
+                margin-bottom: 16px;
+            }
+
+            .mentor-name {
+                font-size: 1.1rem;
+            }
+
+            .mentor-credentials {
+                font-size: 0.85rem;
+            }
+
+            .university-logo {
+                max-width: 250px;
+            }
+        }
+    </style>
 </head>
+<body>
 
-<body id="top">
-
-  <!-- 
-    - #HEADER
-  -->
-
-  <header class="header" data-header>
-    <div class="container">
-
-      <div class="overlay" data-overlay></div>
-
-      <a href="#" class="logo">
-        <img src="./assets/images/EliteX logo (252 x 72 px).svg" alt="EliteX logo">
-      </a>
-
-      <button class="menu-open-btn" data-menu-open-btn>
-        <ion-icon name="menu-outline"></ion-icon>
-      </button>
-
-      <nav class="navbar" data-navbar>
-
-        <button class="menu-close-btn" data-menu-close-btn>
-          <ion-icon name="close-outline"></ion-icon>
-        </button>
-
-        <a href="#" class="logo">
-          <img src="./assets/images/EliteX logo (252 x 72 px).svg" alt="EliteX Llogo">
+    <header class="header">
+        <a href="https://elitemindsprogram.com/">
+            <img src="./images/elitex_circle_logo.png" alt="Elite Minds" class="logo">
         </a>
+        <button class="menu-toggle">☰</button>
+        <nav class="header-nav">
+            <a href="https://elitemindsprogram.com/group_programs" class="header-link">Group Programs</a>
+            <a href="https://elitemindsprogram.com/mentorship" class="header-link">1:1 Mentorship</a>
+            <a href="https://elitemindsprogram.com/resources" class="header-link">T20 Resources</a>
+            <a href="#" class="header-link active">T20 Intensive</a>
+        </nav>
+    </header>
 
-        <ul class="navbar-list">
-
-          <li>
-            <a href="#home" class="navbar-link">Home</a>
-          </li>
-
-          <li>
-            <a href="#about" class="navbar-link">About</a>
-          </li>
-
-          <li>
-            <a href="#case-studies" class="navbar-link">Case Studies</a>
-          </li>
-
-          <li>
-            <a href="#services" class="navbar-link">Services</a>
-          </li>
-
-
-          <li>
-            <a href="#footer" class="navbar-link">Contact</a>
-          </li>
-
-        </ul>
-
-        <a href="https://tally.so/r/3ELXK2" target="_blank" button class="btn btn-secondary">Learn More</a>
-
-      </nav>
-
-    </div>
-  </header>
-
-
-  <main>
-    <article>
-      <section id="home" class="hero">
-        <div class="container">
-          <figure class="hero-banner">
-            <div class="image-wrapper">
-              <img src="./assets/images/front_img3.png" id="hero-image" />
-            </div>
-          </figure>
-
-          <div class="hero-content">
-            <h1 class="h1 hero-title">Build Your <span class="highlight">Unique</span> <br>College Application</h1>
-            <p class="section-text">
-              <span class="hylt"><b>We help you 5x your Top 20 admissions chances with a standout portfolio</b>
+    <main>
+        <section class="hero-section">
+            <div class="hero-kicker">One-on-One Admission Strategy</div>
+            <h1 class="hero-title">94.4% of our students<br><span style="color: var(--accent-color);">attend a Top 20 university</span></h1>
+            <p class="hero-subtitle">
+                Elite Minds offers elite application and college counseling with Ivy League & T20 mentors for students seeking admission into the world's T20 universities.
             </p>
-            <a href="https://tally.so/r/3ELXK2" target="_blank">
-              <button class="btn btn-primary">Learn More</button>
-            </a>
-          </div>
-        </div>
-      </section>
-    </article>
-</main>
+            <a href="#investment" class="btn-primary">Secure Your Spot</a>
+        </section>
 
-<!-- New stats section -->
-<section class="stat-section">
-  <div class="stat-container">
-    <div class="stat-number">
-      <div class="percentage">94.4%</div>
-      <div class="label">TOP 20 UNIVERSITIES</div>
-    </div>
-    
-    <div class="stat-content">
-      <div class="stat-heading">
-        Over the past 4 years, our students have been accepted to the most elite universities in the world
-      </div>
-      <div class="stat-schools">
-        Including Harvard, Stanford, Princeton, UCLA, Carnegie Mellon, and more
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- 
-  - #HOW IT WORKS
--->
-<div id="about" class="section how-it-works">
-  <div class="container">
-    <h2 class="h2 how-it-works-title">How We Make You Standout</h2>
-    <p class="how-it-works-subtitle">High grades and test scores aren't enough. Our T20 Development Framework shapes you into an Elite Applicant.</p>
-    <div class="how-it-works-grid">
-      <!-- First Row -->
-      <div class="how-it-works-box">
-        <h3 class="box-title">Personalized Strategy</h3>
-        <ul class="box-content">
-          <li>Our Elite Mentors provide personalized guidance to create your custom roadmap that will set you apart at top institutions.</li>
-        </ul>
-      </div>
-      
-      <div class="how-it-works-box">
-        <h3 class="box-title">Unique Hook and Passion Projects</h3>
-        <ul class="box-content">
-          <li>We identify your passions and transform them into a powerful "spike" that makes you unforgettable to admissions officers.</li>
-        </ul>
-      </div>
-      
-      <!-- Second Row -->
-      <div class="how-it-works-box">
-        <h3 class="box-title">Impact Activites</h3>
-        <ul class="box-content">
-          <li>We tailor extracurricular activities, community outreach, and entrepreneurial initiatives around a compelling hook that sets you apart.</li>
-        </ul>
-      </div>
-      
-      <div class="how-it-works-box">
-        <h3 class="box-title">Research and Internships</h3>
-        <ul class="box-content">
-          <li>Our students conduct research alongside Stanford and Harvard researchers and PhDs, while gaining access to internships and summer programs.</li>
-        </ul>
-      </div>
-      
-      <!-- Third Row -->
-      <div class="how-it-works-box">
-        <h3 class="box-title">End-to-End Support</h3>
-        <ul class="box-content">
-          <li>9/10 families we work with are new to the US college admissions process. We guide students from start to successful college placement with unlimited, 24/7 support.</li>
-        </ul>
-      </div>
-      
-      <div class="how-it-works-box">
-        <h3 class="box-title">Standout Essays</h3>
-        <ul class="box-content">
-          <li>Our essay experts help you craft compelling essays through strategic brainstorming and comprehensive editing, connecting your authentic stories to each campus.</li>
-        </ul>
-      </div>
-    </div>
-  </div>
-</div>
-
-
-<!-- Examples Section - Updated -->
-<section id="case-studies" class="examples-section">
-  <div class="container">
-    <h2 class="examples-section-title">Featured Students</h2>
-    <p class="examples-section-description">
-      Our Elite Mentors and students collaborate to develop unique, impactful profiles that set them apart in college admissions.
-    </p>
-    <div class="examples-section-content">
-      <div class="example-item">
-        <div class="example-image">
-          <img src="./assets/images/Diya.jpeg" alt="Diya">
-        </div>
-        <div class="example-student-container">
-          <div class="example-student-name">Diya S.</div>
-          <div class="example-university">Harvard University</div>
-          <p>Diya founded a non-profit initiative dedicated to building toilets for girls in remote rural farming villages of South India, improving sanitation and education access. Her work has helped reduce dropout rates among teenage girls due to lack of proper facilities.</p>
-        </div>
-      </div>               
-      
-      <div class="example-item">
-        <div class="example-image frances-image">
-          <img src="./assets/images/student6.png" alt="Frances">
-        </div>
-        <div class="example-student-container">
-          <div class="example-student-name">Frances O.</div>
-          <div class="example-university">Yale University</div>
-          <p>Frances conducted research analyzing how over-the-counter antihistamines impact reaction time in adolescent athletes, publishing his findings in a peer-reviewed journal. His study led several athletic organizations to revise their medication guidelines.</p>
-        </div>
-      </div>
-      
-      <div class="example-item">
-        <div class="example-image">
-          <img src="./assets/images/Katie.png" alt="Katie">
-        </div>
-        <div class="example-student-container">
-          <div class="example-student-name">Katie C.</div>
-          <div class="example-university">UC Berkeley</div>
-          <p>Katie developed an evidence-based program helping high school students with ADHD and anxiety optimize their study habits through mindfulness and cognitive strategies, resulting in a 40% average improvement in homework completion rates among participants.</p>
-        </div>
-      </div>
-      
-      <div class="example-item">
-        <div class="example-image tyler-image">
-          <img src="./assets/images/tyler.jpeg" alt="Tyler">
-        </div>
-        <div class="example-student-container">
-          <div class="example-student-name">Tyler F.</div>
-          <div class="example-university">Stanford University</div>
-          <p>Tyler built an innovative chess application that enables visually impaired players to make moves through their voice, making chess more accessible. Through partnerships with blind community organizations, the application has benefitted hundreds.</p>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-
-<!-- Team Section
-  <div class="container">
-    <h2 class="h2 passion-project-title">The UC Berkeley Team</h2>
-
-    <div class="founders-container">
-      <div class="founder">
-        <img src="./assets/images/Pritwik_headshot.JPG" alt="Pritwik J." class="founder-image pritwik-image">
-        <div class="founder-details">
-          <h3 class="founder-name">Pritwik Jeeva</h3>
-          <p class="founder-description">I'm a UC Berkeley graduate in Data Science and founder of two international non-profit ventures. I have led AI teams at two startups in the past, specializing in Computer Vision and Natural Language Processing. Currently, I'm the founder of my own AI startup based in Silicon Valley (backed by the Berkeley SkyDeck program that has a 3.5% acceptance rate).
-          </p>
-        </div>
-      </div>
-      <div class="founder">
-        <img src="./assets/images/headshot.png" alt="Keerti Jeeva" class="founder-image">
-        <div class="founder-details">
-          <h3 class="founder-name">Keerti Jeeva</h3>
-          <p class="founder-description">I’m a UC Berkeley Computer Science major and the youngest women in history to be admitted into Berkeley’s startup incubator program- Berkeley SkyDeck. I have run 2 small businesses in the past, scaled a women’s education non-profit, and hosted a business psychology podcast with listeners in over 38 different countries. Excited to share my strong passion for AI and entrepreneurship with our students.</p>
-        </div>
-      </div>
-      <div class="founder">
-        <img src="./assets/images/Nikita_mentor.jpeg" alt="Nikita Katukota" class="founder-image">
-        <div class="founder-details">
-          <h3 class="founder-name">Nikita Katukota</h3>
-          <p class="founder-description">I'm a UC Berkeley graduate in Biology. My research journey includes current work at Stanford's Pediatric Orthopaedic Department, clinical research at Harvard Cancer Institute, Ob/Gyn research at UCSF Medical School, and radiological research at Stony Brook University. As co-author of multiple cancer research publications, and over 3 years of extensive mentorship experience in Pre-Med and Public Health, I'm passionate about guiding the next generation of medical professionals and researchers.</p>
-        </div>
-      </div>
-    </div>
-  </div>
-  
--->
-
-
-
-  <!-- 
-  - #SERVICES
--->
-
-  <section id="services" class="programs">
-    <div class="container">
-      <h2 class="h2 programs-title">Elite Services</h2>
-
-      <p class="section-text-it">
-        From middle school to senior year, our T20 Development Framework helps you build a stellar college application that gives you a competitive edge
-      </p>
-
-      <!-- Add the vector image here -->
-      <div class="vector-image">
-        <img src="./assets/images/departments-vector.svg" alt="Decorative vector design" class="vector-line">
-      </div>
-
-      <div class="programs-list">
-        <div class="programs-card">
-          <h3 class="h3 card-title">Portfolio Development Package</h3>
-          <div class="card-content">
-            <p class="card-text">
-              <strong>7th-11th grade</strong><br>
-              Our year-round, personalized program guides students in developing standout portfolios through passion projects, research, competitions, and more.
-            </p>
-            <a href="https://tally.so/r/3ELXK2" target="_blank" class="btn btn-primary">Learn More</a>
-          </div>
-          <div class="card-image">
-            <img src="./assets/images/portfolio2.png" alt="7th-10th grade student working on computer">
-          </div>
-        </div>
-
-        <div class="programs-card">
-          <h3 class="h3 card-title">Senior Portfolio & Application Package</h3>
-          <div class="card-content">
-            <p class="card-text">
-              <strong>12th grade</strong><br>
-              Expert guidance to craft compelling college applications through essay development, resume building, and activities list optimization, and more.
-            </p>
-            <a href="https://tally.so/r/3ELXK2" target="_blank" class="btn btn-primary">Learn More</a>
-          </div>
-          <div class="card-image">
-            <img src="./assets/images/11th-12th-image.svg" alt="11th-12th grade students">
-          </div>
-        </div>
-      </div>
-     <!-- <div class="programs-additional-info">
-        <div class="info-content">
-          <div class="text-content">
-            <p>Accelerated Program</p>
-            <p class="rubik-font"><strong>8 sessions; 8 weeks</strong><br>
-              Intensive mentoring to complete a certified project quickly. Designed for students in 12th grade</p>
-          </div>
-      
-          <a href="https://tally.so/r/3ELXK2" class="btn btn-primary" target="_blank">Learn More</a>
-        </div>
-      </div>
-      -->
-    </div>
-  </section>
-
-
-<!--
-    - #MENTORS
-    -->
-  
-    <section id="mentors" class="instructor">
-      <div class="container">
-        <img src="./assets/images/instructor-vactor-1.svg" alt="Vector line art" class="vector-line">
-        <h2 class="h2 departments-title">Meet the Elite Mentors</h2>
-        <p class="section-text-it">
-          Our Elite Mentors are handpicked from T20 universities and have founded companies, published research, and led global nonprofits.
-
-        </p>
-        <ul class="instructor-list">
-          <li>
-            <div class="instructor-card">
-              <figure class="card-banner">
-                <img src="./assets/images/Pritwik_headshot.JPG" alt="Pritwik">
-              </figure>
-              <h3 class="card-title">Pritwik J.</h3>
-              <p class="card-subtitle">UC Berkeley Data Science Alum</p>
-              <p class="card-subtitle">AI Startup Founder, Entrepreneur In Residence @ Berkeley SkyDeck</p>
-              <p class="card-subtitle">Technology Research @ IIT Madras, UC Berkeley</p>
+        <div class="deadline-bar">
+            <div class="deadline-item">
+                <span class="deadline-label">Ivy League / Private Deadline</span>
+                <span class="deadline-date">Dec & Jan</span>
             </div>
-          </li>
-          <li>
-            <div class="instructor-card">
-              <figure class="card-banner">
-                <img src="./assets/images/ayaan_mentor.jpeg" alt="Ayaan">
-              </figure>
-              <h3 class="card-title">Ayaan P.</h3>
-              <p class="card-subtitle">Pre-Med @ Stanford</p>
-              <p class="card-subtitle">Founder of Two Pioneering Health Initiatives</p>
-              <p class="card-subtitle">2x Published Medical Research Author</p>
+            <div class="deadline-item" style="color: var(--accent-color);">
+                <span class="deadline-label">Status</span>
+                <span class="deadline-date">Critical</span>
             </div>
-          </li>
-          <li>
-            <div class="instructor-card">
-              <figure class="card-banner">
-                <img src="./assets/images/keerti_mentor.jpeg" alt="Keerti">
-              </figure>
-              <h3 class="card-title">Keerti J.</h3>
-              <p class="card-subtitle">UC Berkeley Computer Science</p>
-              <p class="card-subtitle">AI Entrepreneur @ Berkeley SkyDeck</p>
-              <p class="card-subtitle">Founder of Women's Edu Non-Profit</p>
-            </div>
-          </li>
-          <li>
-            <div class="instructor-card">
-              <figure class="card-banner">
-                <img src="./assets/images/mrudula_mentor.JPG" alt="Mrudula">
-              </figure>
-              <h3 class="card-title">Mrudula N.</h3>
-              <p class="card-subtitle">PhD, NYU School of Medicine</p>
-              <p class="card-subtitle">Research @ Johns Hopkins, Harvard</p>
-              <p class="card-subtitle">MPH in Global Health Leadership, NYU</p>
-            </div>
-          </li>
-          <li>
-            <div class="instructor-card">
-              <figure class="card-banner">
-                <img src="./assets/images/kaitlyn_mentor.jpg" alt="Kaitlyn">
-              </figure>
-              <h3 class="card-title">Kaitlyn C.</h3>
-              <p class="card-subtitle">UCLA Physiological Science Alum</p>
-              <p class="card-subtitle">Genetic Counseling @ Stanford Health</p>
-              <p class="card-subtitle">Research @ UCSF, UCLA, LookUpTrials</p>
-            </div>
-          </li>
-          <li>
-            <div class="instructor-card">
-              <figure class="card-banner">
-                <img src="./assets/images/Aditya_mentor.jpeg" alt="Aditya">
-              </figure>
-              <h3 class="card-title">Aditya J.</h3>
-              <p class="card-subtitle">UC Berkeley Biology</p>
-              <p class="card-subtitle">Y Combinator-Backed Healthcare Tech Founder</p>
-              <p class="card-subtitle">Neuroscience Research @ UCSF, UC Berkeley</p>
-            </div>
-          </li>
-          <li>
-            <div class="instructor-card">
-              <figure class="card-banner">
-                <img src="./assets/images/julia_mentor.jpg" alt="Julia">
-              </figure>
-              <h3 class="card-title">Julia D.</h3>
-              <p class="card-subtitle">UC Berkeley Chemical Biology & Nutritional Sciences Alum</p>
-              <p class="card-subtitle">Gene Therapy Research Lead @ UCSF</p>
-              <p class="card-subtitle">Published Medical Oncology Research Author</p>
-            </div>
-          </li>
-          <li>
-            <div class="instructor-card">
-              <figure class="card-banner">
-                <img src="./assets/images/isabella_mentor.jpeg" alt="Isabella">
-              </figure>
-              <h3 class="card-title">Isabella D.</h3>
-              <p class="card-subtitle">UC Berkeley Physics</p>
-              <p class="card-subtitle">Particle Research @ ATLAS Experiment, Berkeley Lab</p>
-              <p class="card-subtitle">Astrophysics (Supernova Cosmology) Research, Northwestern University</p>
-            </div>
-          </li>
-          <li>
-            <div class="instructor-card">
-              <figure class="card-banner">
-                <img src="./assets/images/bhaktram_headshot.jpg" alt="Bhaktram">
-              </figure>
-              <h3 class="card-title">Bhaktram J.</h3>
-              <p class="card-subtitle">NYU Computer Science</p>
-              <p class="card-subtitle">Deep Learning Research @ Hewlett Packard</p>
-              <p class="card-subtitle">Machine Learning Research @ National University of Singapore</p>
-            </div>
-          </li>
-          <li>
-            <div class="instructor-card">
-              <figure class="card-banner">
-                <img src="./assets/images/osezele_headshot.jpeg" alt="Osezele">
-              </figure>
-              <h3 class="card-title">Osezele O.</h3>
-              <p class="card-subtitle">Darmouth Engineering Alum, Opus Fellow</p>
-              <p class="card-subtitle">Data Research @ Dartmouth Medical School</p>
-              <p class="card-subtitle">Biomedical Engineering Research @ Dartmouth Engineering</p>
-            </div>
-          </li>
-          <li>
-            <div class="instructor-card">
-              <figure class="card-banner">
-                <img src="./assets/images/vibha_headshot.jpg" alt="Vibha">
-              </figure>
-              <h3 class="card-title">Vibha S.</h3>
-              <p class="card-subtitle">UC Berkeley Analytics</p>
-              <p class="card-subtitle">Founder & Executive Director @ Hygiene for Her </p>
-              <p class="card-subtitle">Gates Foundation Local Changemaker, ATT Oxygen Scholar</p>
-            </div>
-          </li>
-          <li>
-            <div class="instructor-card">
-              <figure class="card-banner">
-                <img src="./assets/images/claire_headshot.jpeg" alt="Claire">
-              </figure>
-              <h3 class="card-title">Claire N.</h3>
-              <p class="card-subtitle">MBA @ UPenn Wharton</p>
-              <p class="card-subtitle">Duke Computer Engineering Alum</p>
-              <p class="card-subtitle">Software Engineer @ Apple, Disney, Gemini</p>
-            </div>
-          </li>
-        </ul>
-        <!-- <img src="./assets/images/instructor-vactor-2.svg" alt="Vector line art" class="vector-line"> -->
-      </div>
-    </section>
-    
-
-
-
-<!--
-    - #TESTIMONIALS
-    -->
-
-    <section id="testimonials" class="testimonials">
-      <h2 class="h2 testimonials-title">Read What Our Students Have to Say</h2>
-    
-      <div class="testimonials-grid">
-        <!-- Bottom 3 moved to the top -->
-        <div class="testimonial-card">
-          <div class="student-info">
-            <img src="./assets/images/student8.png" alt="Alice Y." class="student-image">
-            <div class="student-details">
-              <h3 class="student-name">Alice Y., Princeton</h3>
-            </div>
-          </div>
-          <div class="rating">★★★★★</div>
-          <p class="quote">EliteX was instrumental in helping me develop my profile for Princeton. Their mentors provided great guidance and helped me turn my ideas into something meaningful. Getting into Princeton was amazing, and I definitely have EliteX to thank for helping me stand out in my application. Highly recommend them if you're serious about college admissions!</p>
-        </div>
-    
-        <div class="testimonial-card">
-          <img src="./assets/images/ranvir.jpeg" alt="Ranvir" class="student-image">
-          <h3 class="student-name">Ranvir P., UPenn</h3>
-          <div class="rating">★★★★★</div>
-          <p class="quote">I can't thank EliteX enough for the pivotal role it played in my journey to securing a spot in
-            a leading computer engineering program. I built a blockchain tool amongst other technical projects and it looked great on my application. Thanks to this program, I am now on the path
-            to transforming my career aspirations into a reality.</p>
-        </div>
-    
-        <div class="testimonial-card">
-          <div class="student-info">
-            <img src="./assets/images/student4.png" alt="Eric" class="student-image">
-            <div class="student-details">
-              <h3 class="student-name">Eric G., Cornell</h3>
-            </div>
-          </div>
-          <div class="rating">★★★★★</div>
-          <p class="quote">EliteX was a game changer for my college application journey. Their personalized guidance
-            helped me develop a unique AI project that truly stood out. Thanks to EliteX, I gained the confidence and
-            skills to secure a spot at my dream university. I highly recommend this program to any student looking to
-            build a standout portfolio.</p>
-        </div>
-    
-        <!-- Top 3 moved to the bottom -->
-        <div class="testimonial-card">
-          <img src="./assets/images/student1.png" alt="Student 1" class="student-image">
-          <h3 class="student-name">Aziz M., UC Berkeley</h3>
-          <div class="rating">★★★★★</div>
-          <p class="quote">Pritwik and Keerti's meticulous attention to detail played a pivotal role in refining my
-            projects during the EliteX program. Their guidance on minor adjustments significantly influenced the impact of
-            my work. Thanks to their support, I successfully secured a spot in my dream college, UC Berkeley.</p>
-        </div>
-    
-        <div class="testimonial-card">
-          <div class="student-info">
-            <img src="./assets/images/Spencer.jpeg" alt="Spencer L." class="student-image">
-            <div class="student-details">
-              <h3 class="student-name">Spencer L., Carnegie Mellon</h3>
-            </div>
-          </div>
-          <div class="rating">★★★★★</div>
-          <p class="quote">I just wanted to express my gratitude to EliteX for the incredible support that helped me
-            secure admission to CMU. The personalized guidance, especially the office hours sessions focusing on project
-            iteration, were instrumental. I highly recommend this program for anyone seeking a successful college
-            application journey.</p>
-        </div>
-    
-        <div class="testimonial-card">
-          <img src="./assets/images/student3.png" alt="Student 1" class="student-image">
-          <h3 class="student-name">Samantha S., UCLA</h3>
-          <div class="rating">★★★★★</div>
-          <p class="quote">Before joining EliteX, I felt overwhelmed and disconnected from the college application process
-            after moving from Canada. Fortunately, the program provided invaluable assistance. They not only guided me in selecting the right passion project, but also helped me showcase my
-            strengths effectively. I strongly vouch for the benefits of EliteX, especially for international students.</p>
-        </div>
-      </div>
-    </section>
-    
-    
-
-
-  <!-- 
-        - #CTA
-      -->
-
-  <section class="cta">
-    <div class="container">
-
-      <div class="title-wrapper">
-
-        <h2 class="h2 cta-title">
-          <span>Start Building a T20 College Portfolio Today</span>
-        </h2>
-
-        <a href="https://tally.so/r/3ELXK2" target="_blank">
-          <button class="btn btn-primary">Learn More</button>
-        </a>
-
-      </div>
-
-      <div class="cta-banner"></div>
-
-    </div>
-  </section>
-
-  </article>
-  </main>
-
-
-
-
-
-  <!-- 
-    - #FOOTER
-  -->
-
-  <footer id="footer" class="footer">
-
-    <div class="footer-top">
-      <div class="container">
-
-        <div class="footer-brand">
-
-          <a href="#" class="logo">
-            <img src="./assets/images/EliteX logo (252 x 72 px).svg" alt="EliteX logo">
-          </a>
-
-          <p class="footer-text">
-            We help students boost their T20 college chances by building standout portfolios
-          </p>
-
-          <ul class="social-list">
-
-            <li>
-              <a href="https://www.facebook.com/profile.php?id=61561243380736" class="social-link" target="_blank">
-                <ion-icon name="logo-facebook"></ion-icon>
-              </a>
-            </li>
-
-            <li>
-              <a href="https://www.tiktok.com/@elitexprogram?lang=en" class="social-link" target="_blank">
-                <ion-icon name="logo-tiktok"></ion-icon>
-              </a>
-            </li>
-
-            <li>
-              <a href="https://www.instagram.com/elitexprogram/" class="social-link" target="_blank">
-                <ion-icon name="logo-instagram"></ion-icon>
-              </a>
-            </li>
-
-            <li>
-              <a href="https://www.linkedin.com/company/elitexprogram" class="social-link" target="_blank">
-                <ion-icon name="logo-linkedin"></ion-icon>
-              </a>
-            </li>
-
-
-          </ul>
-
         </div>
 
-        <div class="footer-link-box">
+        <!-- Expert Mentors Section -->
+        <section class="mentors-section" style="padding: 60px 24px;">
+            <div class="section-header" style="max-width: 1200px; margin: 0 auto 50px;">
+                <h2 class="section-title">A Powerhouse Team of T20 Mentors</h2>
+            </div>
 
-          <ul class="footer-list">
+            <div class="mentors-grid">
+                <!-- Mentor 1: Pritwik -->
+                <div class="mentor-card-static">
+                    <img src="./images/Pritwik_headshot.JPG" alt="Pritwik J." class="mentor-photo">
+                    <h3 class="mentor-name">Pritwik J.</h3>
+                    <p class="mentor-credentials">UC Berkeley Admissions Expert</p>
+                </div>
 
-            <!--            <li>
-              <p class="footer-link-title">Services</p>
-            </li>
+                <!-- Mentor 2: Amina -->
+                <div class="mentor-card-static">
+                    <img src="./images/amina_headshot.jpeg" alt="Amina K." class="mentor-photo">
+                    <h3 class="mentor-name">Amina A.</h3>
+                    <p class="mentor-credentials">Columbia Admissions Expert</p>
+                </div>
 
-            <li>
-              <a href="#" class="footer-link">Design</a>
-            </li>
+                <!-- Mentor 3: Morgan -->
+                <div class="mentor-card-static">
+                    <img src="./images/morgan_headshot.jpeg" alt="Morgan R." class="mentor-photo">
+                    <h3 class="mentor-name">Morgan H.</h3>
+                    <p class="mentor-credentials">Columbia & UT Austin Admissions Expert</p>
+                </div>
 
-            <li>
-              <a href="#" class="footer-link">Development</a>
-            </li>
+                <!-- Mentor 4: Perpetual -->
+                <div class="mentor-card-static">
+                    <img src="./images/perpetual_headshot.jpg" alt="Perpetual" class="mentor-photo">
+                    <h3 class="mentor-name">Perpetual B.</h3>
+                    <p class="mentor-credentials">UPenn Admissions Expert</p>
+                </div>
 
-            <li>
-              <a href="#" class="footer-link">Marketing</a>
-            </li>
+                <!-- Mentor 5: Jocelyne -->
+                <div class="mentor-card-static">
+                    <img src="./images/jocelyne_headshot.png" alt="Jocelyne W." class="mentor-photo">
+                    <h3 class="mentor-name">Jocelyne W.</h3>
+                    <p class="mentor-credentials">Princeton Admissions Experts</p>
+                </div>
+            </div>
 
-            <li>
-              <a href="#" class="footer-link">Content Writing</a>
-            </li>
+            <!-- University Logo -->
+            <div class="university-logo-container" style="flex-direction: column; gap: 0; align-items: center;">
+                <h3 style="font-family: var(--serif-font); font-size: 1.9rem; color: #000; margin-top: 20px;">Our Placements</h3>
+                <img src="./images/t20_logos.png" alt="Top Universities" class="university-logo">
+            </div>
 
-          </ul>
+            <div style="text-align: center; padding: 60px 24px 20px 24px;">
+                <a href="#investment" class="btn-primary">Get Started</a>
+            </div>
+        </section>
 
-          <ul class="footer-list">
+        <section class="section">
+            <div class="section-header">
+                <p class="uppercase-tracking">The Reality</p>
+                <h2 class="section-title">30x increase your admission chances.</h2>
+                <p class="section-desc">In the T20 landscape, excellent grades and extracurriculars are merely the prerequisite. To stand out, you need more than achievement. You need a narrative that makes you impossible to ignore.</p>
+            </div>
+            
+            <div class="feature-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">✦</div>
+                    <h3 class="feature-title">Essay Storytelling</h3>
+                    <p class="feature-text">We don't just edit essays; we architect personal brands. We extract the unique thread in your story that admissions officers are looking for.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">♛</div>
+                    <h3 class="feature-title">Insider Strategy</h3>
+                    <p class="feature-text">Work directly with mentors from Ivy League & Top 20 universities. Learn the precise evaluation criteria used inside the decision room.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">⚡</div>
+                    <h3 class="feature-title">Application Impact</h3>
+                    <p class="feature-text">Every word, every activity description, and every letter of recommendation is positioned to demonstrate intellectual vitality and leadership.</p>
+                </div>
+            </div>
+        </section>
 
-            <li>
-              <p class="footer-link-title">Company</p>
-            </li>
+        <section class="testimonial-section">
+            <div class="section-header">
+                <p class="uppercase-tracking">Success Stories</p>
+                <h2 class="section-title">What Our Students Say</h2>
+            </div>
+            <div class="testimonial-carousel">
+                <div class="testimonial-track">
+                    <!-- Testimonial 1 -->
+                    <div class="testimonial-card">
+                        <div class="testimonial-quote">My mentor helped me completely reimagine my Common App essay. What started as a generic story became a compelling narrative that truly captured who I am. I'm convinced it made the difference.</div>
+                        <div class="testimonial-author">
+                            <span class="author-name">Sarah M.</span>
+                            <span class="author-info">Admitted to Harvard '28</span>
+                        </div>
+                    </div>
+                    <!-- Testimonial 2 -->
+                    <div class="testimonial-card">
+                        <div class="testimonial-quote">The strategic guidance was invaluable. My mentor knew exactly what Stanford was looking for and helped me position my extracurriculars in a way I never would have thought of on my own.</div>
+                        <div class="testimonial-author">
+                            <span class="author-name">Michael T.</span>
+                            <span class="author-info">Admitted to Stanford '28</span>
+                        </div>
+                    </div>
+                    <!-- Testimonial 3 -->
+                    <div class="testimonial-card">
+                        <div class="testimonial-quote">I came to Elite Minds just three weeks before my deadline, feeling overwhelmed. My mentor's focused approach transformed my application in ways I didn't think were possible in such a short time.</div>
+                        <div class="testimonial-author">
+                            <span class="author-name">Emily R.</span>
+                            <span class="author-info">Admitted to Yale '28</span>
+                        </div>
+                    </div>
+                    <!-- Testimonial 4 -->
+                    <div class="testimonial-card">
+                        <div class="testimonial-quote">The narrative development process was eye-opening. My mentor helped me find the thread connecting all my experiences into a cohesive story that admissions officers couldn't ignore.</div>
+                        <div class="testimonial-author">
+                            <span class="author-name">David K.</span>
+                            <span class="author-info">Admitted to Princeton '28</span>
+                        </div>
+                    </div>
+                    <!-- Testimonial 5 -->
+                    <div class="testimonial-card">
+                        <div class="testimonial-quote">Having a mentor who actually went through the Ivy League admissions process made all the difference. The insider perspective and personalized feedback elevated every part of my application.</div>
+                        <div class="testimonial-author">
+                            <span class="author-name">Jessica L.</span>
+                            <span class="author-info">Admitted to Columbia '28</span>
+                        </div>
+                    </div>
+                    <!-- Testimonial 6 -->
+                    <div class="testimonial-card">
+                        <div class="testimonial-quote">Elite Minds helped me craft a narrative that showcased my unique perspective. My mentor understood exactly what UC Berkeley values and guided me to present my achievements in the most compelling way possible.</div>
+                        <div class="testimonial-author">
+                            <span class="author-name">Arnav S.</span>
+                            <span class="author-info">Admitted to UC Berkeley '28</span>
+                        </div>
+                    </div>
+                    <!-- Duplicated for infinite scroll -->
+                    <div class="testimonial-card">
+                        <div class="testimonial-quote">My mentor helped me completely reimagine my Common App essay. What started as a generic story became a compelling narrative that truly captured who I am. I'm convinced it made the difference.</div>
+                        <div class="testimonial-author">
+                            <span class="author-name">Sarah M.</span>
+                            <span class="author-info">Admitted to Harvard '28</span>
+                        </div>
+                    </div>
+                    <div class="testimonial-card">
+                        <div class="testimonial-quote">The strategic guidance was invaluable. My mentor knew exactly what Stanford was looking for and helped me position my extracurriculars in a way I never would have thought of on my own.</div>
+                        <div class="testimonial-author">
+                            <span class="author-name">Michael T.</span>
+                            <span class="author-info">Admitted to Stanford '28</span>
+                        </div>
+                    </div>
+                    <div class="testimonial-card">
+                        <div class="testimonial-quote">I came to Elite Minds just three weeks before my deadline, feeling overwhelmed. My mentor's focused approach transformed my application in ways I didn't think were possible in such a short time.</div>
+                        <div class="testimonial-author">
+                            <span class="author-name">Emily R.</span>
+                            <span class="author-info">Admitted to Yale '28</span>
+                        </div>
+                    </div>
+                    <div class="testimonial-card">
+                        <div class="testimonial-quote">The narrative development process was eye-opening. My mentor helped me find the thread connecting all my experiences into a cohesive story that admissions officers couldn't ignore.</div>
+                        <div class="testimonial-author">
+                            <span class="author-name">David K.</span>
+                            <span class="author-info">Admitted to Princeton '28</span>
+                        </div>
+                    </div>
+                    <div class="testimonial-card">
+                        <div class="testimonial-quote">Having a mentor who actually went through the Ivy League admissions process made all the difference. The insider perspective and personalized feedback elevated every part of my application.</div>
+                        <div class="testimonial-author">
+                            <span class="author-name">Jessica L.</span>
+                            <span class="author-info">Admitted to Columbia '28</span>
+                        </div>
+                    </div>
+                    <div class="testimonial-card">
+                        <div class="testimonial-quote">Elite Minds helped me craft a narrative that showcased my unique perspective. My mentor understood exactly what UC Berkeley values and guided me to present my achievements in the most compelling way possible.</div>
+                        <div class="testimonial-author">
+                            <span class="author-name">Arnav S.</span>
+                            <span class="author-info">Admitted to UC Berkeley '28</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
 
-            <li>
-              <a href="#" class="footer-link">About</a>
-            </li>
+        <section id="investment" class="section pricing-section">
+            <div class="section-header">
+                <p class="uppercase-tracking">Get Admitted</p>
+                <h2 class="section-title">Select Your Tier</h2>
+            </div>
+            <div class="feature-grid">
+                <!-- Tier 1 -->
+                <div class="pricing-card">
+                    <span class="pricing-tier">Targeted Review</span>
+                    <div class="pricing-amount">3 Hour Bundle</div>
+                    <div class="pricing-save">$950</div>
+                    <ul class="pricing-features">
+                        <li>Individual mentorship sessions</li>
+                        <li>Specific essay review</li>
+                        <li>Strategic Q&A</li>
+                        <li>Activity list audit</li>
+                        <li>Voice refinement & clarity</li>
+                    </ul>
+                    <a href="https://tally.so/r/xXV9XJ" class="btn-outline">Schedule Consultation</a>
+                </div>
 
-            <li>
-              <a href="#" class="footer-link">Terms</a>
-            </li>
+                <!-- Tier 2 (Highlighted) -->
+                <div class="pricing-card highlight">
+                    <span class="pricing-tier" style="color: var(--accent-color);">Comprehensive</span>
+                    <div class="pricing-amount">5 Hour Bundle</div>
+                    <div class="pricing-save">$1,550</div>
+                    <ul class="pricing-features">
+                        <li>Individual mentorship sessions</li>
+                        <li>Deep-dive narrative construction</li>
+                        <li>Full Common App review</li>
+                        <li>Multiple essay iterations</li>
+                        <li>Topic development & architecture</li>
+                        <li>Activity list positioning</li>
+                    </ul>
+                    <a href="https://tally.so/r/xXV9XJ" class="btn-outline">Schedule Consultation</a>
+                </div>
 
-            <li>
-              <a href="#" class="footer-link">Privacy Policy</a>
-            </li>
+                <!-- Tier 3 -->
+                <div class="pricing-card">
+                    <span class="pricing-tier">End-to-End</span>
+                    <div class="pricing-amount">Custom Bundle</div>
+                    <div class="pricing-save">Schedule consultation</div>
+                    <ul class="pricing-features">
+                        <li>Full college roadmap</li>
+                        <li>Long-term college guidance</li>
+                        <li>Comprehensive application strategy</li>
+                        <li>Ongoing essay support</li>
+                        <li>Full admissions cycle partnership</li>
+                        <li>Priority mentor access</li>
+                    </ul>
+                    <a href="https://tally.so/r/xXV9XJ" class="btn-outline">Schedule Consultation</a>
+                </div>
+            </div>
+        </section>
 
-            <li>
-              <a href="#" class="footer-link">Careers</a>
-            </li>
+        <section class="section">
+            <div class="faq-container">
+                <h2 class="section-title" style="text-align: center; margin-bottom: 40px;">Frequently Asked Questions</h2>
+                <div class="faq-item">
+                    <h4 class="faq-question">Is this worth it so close to deadlines?</h4>
+                    <p class="faq-answer">Absolutely. The final weeks are often the most critical. A focused review can transform a good application into a great one by identifying blind spots and sharpening your narrative arc.</p>
+                </div>
+                <div class="faq-item">
+                    <h4 class="faq-question">How does the mentorship work?</h4>
+                    <p class="faq-answer">You are paired with a T20/Ivy League mentor who has successfully navigated the T20 process. Sessions are 1:1, conducted virtually, and highly focused on actionable improvements.</p>
+                </div>
+            </div>
+        </section>
+    </main>
 
-          </ul>
-
-          <ul class="footer-list">
-
-            <li>
-              <p class="footer-link-title">Job Info</p>
-            </li>
-
-            <li>
-              <a href="#" class="footer-link">Select</a>
-            </li>
-
-            <li>
-              <a href="#" class="footer-link">Services</a>
-            </li>
-
-            <li>
-              <a href="#" class="footer-link">Payment</a>
-            </li>
-
-          </ul> -->
-
-            <ul class="footer-list">
-
-              <li>
-                <p class="footer-link-title">Contact</p>
-              </li>
-
-              <li class="contact-item">
-                <span>Email : </span>
-
-                <a href="mailto:example@gmail.com" class="contact-link">team@elitexprogram.com</a>
-              </li>
-
-              <li class="contact-item">
-                <span>Address : </span>
-
-                <a href="#" class="contact-link">
-                  <address>650 California St, San Francisco, CA 94108</address>
-                </a>
-              </li>
-
-            </ul>
-
+    <div class="status-indicator">
+        <div class="status-dot"></div>
+        <div class="status-text">
+            <span class="status-value">5 Spots Remaining</span>
         </div>
-
-      </div>
     </div>
 
-    <div class="footer-bottom">
-      <div class="container">
-        <p class="copyright">
-          &copy; 2024 <a href="">EliteX Program, Inc</a>. All rights reserved
-        </p>
-      </div>
-    </div>
+    <script>
+        // Menu Toggle
+        const menuToggle = document.querySelector('.menu-toggle');
+        const nav = document.querySelector('.header-nav');
+        
+        menuToggle.addEventListener('click', () => {
+            nav.classList.toggle('open');
+        });
 
-  </footer>
-
-
-
-
-
-  <!-- 
-    - #GO TO TOP
-  -->
-
-  <a href="#top" class="go-top" data-go-top>
-    <ion-icon name="arrow-up"></ion-icon>
-  </a>
-
-
-
-
-
-  <!-- 
-    - custom js link
-  -->
-  <script src="./assets/js/script.js"></script>
-
-  <!-- 
-    - ionicon link
-  -->
-  <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
-  <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
-
+        // Dynamic Slot Counter (Simulated)
+        const spots = document.querySelector('.status-value');
+        // Optional: reduce count if user stays on page to create urgency
+        let count = 5;
+        // const interval = setInterval(() => {
+        //    if(count > 2) {
+        //        count--;
+        //        spots.innerText = count + " Spots Remaining";
+        //    }
+        // }, 45000); 
+    </script>
 </body>
-
 </html>
