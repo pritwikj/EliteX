@@ -397,6 +397,7 @@
             border-bottom: 1px solid #ddd;
             color: #333;
             font-size: 0.9rem;
+            font-weight: 600;
         }
         
         .pricing-features li:last-child {
@@ -654,11 +655,11 @@
             display: block;
         }
 
-        /* Smaller laptops (13-14 inch screens) */
-        @media (min-width: 769px) and (max-width: 1440px) {
+        /* Shorter viewport heights (smaller laptops) */
+        @media (max-height: 900px) {
             .hero-section {
-                padding-top: 140px;
                 justify-content: flex-start;
+                padding-top: 120px;
             }
         }
 
@@ -902,6 +903,29 @@
             border-color: var(--accent-color);
         }
 
+        .photo-container {
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            overflow: hidden;
+            margin: 0 auto 20px;
+            border: 2px solid var(--border-color);
+            transition: border-color 0.3s ease;
+        }
+
+        .photo-container .mentor-photo {
+            width: 100%;
+            height: 100%;
+            margin: 0;
+            border: none;
+            border-radius: 0;
+            transform: scale(1.3) translateY(10%) translateX(5%);
+        }
+
+        .mentor-card-static:hover .photo-container {
+            border-color: var(--accent-color);
+        }
+
         .mentor-name {
             font-family: var(--serif-font);
             font-size: 1.3rem;
@@ -912,8 +936,8 @@
 
         .mentor-credentials {
             color: var(--accent-color);
-            font-size: 0.95rem;
-            font-weight: 500;
+            font-size: 1.05rem;
+            font-weight: 600;
             letter-spacing: 0.02em;
         }
 
@@ -965,7 +989,7 @@
             }
 
             .mentor-credentials {
-                font-size: 0.85rem;
+                font-size: 1rem;
             }
 
             .university-logo {
@@ -1026,7 +1050,9 @@
             <div class="mentors-grid">
                 <!-- Mentor 1: Pritwik -->
                 <div class="mentor-card-static">
-                    <img src="./images/Pritwik_headshot.JPG" alt="Pritwik J." class="mentor-photo">
+                    <div class="photo-container">
+                        <img src="./images/Pritwik_headshot.JPG" alt="Pritwik J." class="mentor-photo">
+                    </div>
                     <h3 class="mentor-name">Pritwik J.</h3>
                     <p class="mentor-credentials">UC Berkeley Admissions Expert</p>
                 </div>
