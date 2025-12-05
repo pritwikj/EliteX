@@ -130,6 +130,25 @@
             color: var(--accent-color);
         }
 
+        .header-link-cta {
+            background-color: var(--accent-color);
+            color: #000 !important;
+            padding: 8px 16px;
+            border-radius: 2px;
+            font-weight: 600;
+            display: inline-flex;
+            align-items: center;
+        }
+
+        .header-link-cta:hover {
+            background-color: var(--accent-hover);
+            color: #000 !important;
+        }
+
+        .header-nav {
+            align-items: center;
+        }
+
         /* --- Hero Section --- */
         .hero-section {
             min-height: 75vh;
@@ -339,7 +358,7 @@
             margin-right: auto;
         }
 
-        #investment {
+        #investment, #mentors, #testimonials, #faq {
             scroll-margin-top: 90px;
         }
 
@@ -1013,10 +1032,10 @@
         </a>
         <button class="menu-toggle">☰</button>
         <nav class="header-nav">
-            <a href="https://elitemindsprogram.com/group_programs" class="header-link">Group Programs</a>
-            <a href="https://elitemindsprogram.com/mentorship" class="header-link">1:1 Mentorship</a>
-            <a href="https://elitemindsprogram.com/resources" class="header-link">T20 Resources</a>
-            <a href="#" class="header-link active">T20 Intensive</a>
+            <a href="#mentors" class="header-link">About</a>
+            <a href="#testimonials" class="header-link">Testimonials</a>
+            <a href="#faq" class="header-link">FAQ</a>
+            <a href="#investment" class="header-link header-link-cta">Secure Your Spot</a>
         </nav>
     </header>
 
@@ -1043,7 +1062,7 @@
         </div>
 
         <!-- Expert Mentors Section -->
-        <section class="mentors-section" style="padding: 60px 24px;">
+        <section id="mentors" class="mentors-section" style="padding: 60px 24px;">
             <div class="section-header" style="max-width: 1200px; margin: 0 auto 50px;">
                 <h2 class="section-title">A Powerhouse Team of T20 Mentors</h2>
             </div>
@@ -1124,7 +1143,7 @@
             </div>
         </section>
 
-        <section class="testimonial-section">
+        <section id="testimonials" class="testimonial-section">
             <div class="section-header">
                 <p class="uppercase-tracking">Success Stories</p>
                 <h2 class="section-title">What Our Families Say</h2>
@@ -1339,12 +1358,16 @@
             </div>
         </section>
 
-        <section class="section">
+        <section id="faq" class="section" style="padding-top: 60px;">
             <div class="faq-container">
                 <h2 class="section-title" style="text-align: center; margin-bottom: 40px;">Frequently Asked Questions</h2>
                 <div class="faq-item">
                     <h4 class="faq-question">Is this worth it so close to deadlines?</h4>
                     <p class="faq-answer">Absolutely. The final weeks are often the most critical. A focused review can transform a good application into a great one by identifying blind spots and sharpening your narrative arc.</p>
+                </div>
+                <div class="faq-item">
+                    <h4 class="faq-question">What is the ideal age to start preparing for T20 admissions?</h4>
+                    <p class="faq-answer">We recommend starting as early as 7th grade. Beginning early gives students ample time to explore genuine interests, develop meaningful extracurriculars, build leadership experiences, and craft a cohesive narrative—all of which are essential for standing out in the highly competitive T20 admissions process.</p>
                 </div>
                 <div class="faq-item">
                     <h4 class="faq-question">How does the mentorship work?</h4>
