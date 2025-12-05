@@ -581,6 +581,10 @@
             .testimonial-section {
                 padding: 50px 0;
             }
+
+            .author-info {
+                font-size: 0.55rem;
+            }
         }
 
         /* --- Footer Status --- */
@@ -641,16 +645,38 @@
             font-size: 24px;
         }
 
+        /* Hide on mobile */
+        .hide-on-mobile {
+            display: block;
+        }
+
         /* Responsive */
         @media (max-width: 768px) {
+            .hide-on-mobile {
+                display: none;
+            }
             .hero-title { font-size: 2.5rem; }
             .header { padding: 6px 20px; }
+            .logo { width: 65px; }
             .header-nav { display: none; }
-            .deadline-bar { flex-direction: column; gap: 16px; text-align: center; }
+            .deadline-bar { flex-direction: column; gap: 16px; text-align: center; align-items: center; }
+
+            .deadline-item {
+                flex-direction: column;
+                gap: 4px;
+            }
+
+            .deadline-label {
+                font-size: 0.7rem;
+            }
+
+            .deadline-date {
+                font-size: 0.9rem;
+            }
             .status-indicator { bottom: 0; right: 0; left: 0; border-radius: 0; justify-content: center; }
-            
+
             .menu-toggle { display: block; }
-            
+
             .header-nav.open {
                 display: flex;
                 flex-direction: column;
@@ -662,6 +688,142 @@
                 padding: 20px;
                 border-bottom: 1px solid #333;
                 text-align: center;
+            }
+
+            /* Hero section mobile optimization */
+            .hero-section {
+                min-height: 60vh;
+                padding: 100px 16px 40px;
+            }
+
+            .hero-subtitle {
+                font-size: 1rem;
+                margin-bottom: 32px;
+            }
+
+            .hero-kicker {
+                font-size: 0.7rem;
+                padding: 6px 12px;
+            }
+
+            /* Feature grid mobile fix */
+            .feature-grid {
+                grid-template-columns: 1fr;
+                gap: 24px;
+            }
+
+            .feature-card {
+                padding: 32px 24px;
+            }
+
+            .feature-title {
+                font-size: 1.3rem;
+            }
+
+            /* Section spacing */
+            .section {
+                padding: 60px 16px;
+            }
+
+            .section-title {
+                font-size: 1.8rem;
+            }
+
+            /* Pricing section mobile */
+            .pricing-section {
+                padding: 40px 16px !important;
+            }
+
+            .pricing-card {
+                padding: 28px 20px;
+            }
+
+            .pricing-amount {
+                font-size: 1.8rem;
+            }
+
+            .pricing-features li {
+                font-size: 0.85rem;
+                padding: 10px 0;
+            }
+
+            /* FAQ mobile */
+            .faq-question {
+                font-size: 1.05rem;
+            }
+
+            .faq-answer {
+                font-size: 0.9rem;
+            }
+
+            /* University logo */
+            .university-logo {
+                max-width: 100%;
+                padding: 0 16px;
+            }
+
+            .university-logo-container h3 {
+                font-size: 1.3rem;
+            }
+
+            /* Button sizes */
+            .btn-primary, .btn-outline {
+                padding: 14px 28px;
+                font-size: 0.8rem;
+            }
+
+            /* Status indicator text */
+            .status-value {
+                font-size: 0.85rem;
+            }
+        }
+
+        /* Very small screens */
+        @media (max-width: 480px) {
+            .hero-title {
+                font-size: 2rem;
+            }
+
+            .section-title {
+                font-size: 1.6rem;
+            }
+
+            .deadline-bar {
+                padding: 16px;
+                gap: 12px;
+            }
+
+            .deadline-label {
+                font-size: 0.8rem;
+            }
+
+            .mentor-photo {
+                width: 150px;
+                height: 150px;
+            }
+
+            .mentor-name {
+                font-size: 1rem;
+            }
+
+            .mentor-credentials {
+                font-size: 0.8rem;
+            }
+
+            .pricing-tier {
+                font-size: 0.8rem;
+            }
+
+            .pricing-amount {
+                font-size: 1.5rem;
+            }
+
+            .feature-title {
+                font-size: 1.2rem;
+            }
+
+            .faq-question {
+                font-size: 1rem;
             }
         }
 
@@ -795,7 +957,13 @@
             }
 
             .university-logo {
-                max-width: 250px;
+                width: 120%;
+                max-width: none;
+                margin-left: 2%;
+            }
+
+            .university-logo-container h3 {
+                font-size: 1.5rem !important;
             }
         }
     </style>
@@ -803,8 +971,8 @@
 <body>
 
     <header class="header">
-        <a href="https://elitemindsprogram.com/">
-            <img src="./images/elitex_circle_logo.png" alt="Elite Minds" class="logo">
+        <a href="index.html">
+            <img src="./images/elitex_clear_circle_logo.png" alt="Elite Minds" class="logo">
         </a>
         <button class="menu-toggle">☰</button>
         <nav class="header-nav">
@@ -894,7 +1062,7 @@
             <div class="section-header">
                 <p class="uppercase-tracking">The Reality</p>
                 <h2 class="section-title">30x increase your admission chances.</h2>
-                <p class="section-desc">In the T20 landscape, excellent grades and extracurriculars are merely the prerequisite. To stand out, you need more than achievement. You need a narrative that makes you impossible to ignore.</p>
+                <p class="section-desc hide-on-mobile">In the T20 landscape, excellent grades and extracurriculars are merely the prerequisite. To stand out, you need more than achievement. You need a narrative that makes you impossible to ignore.</p>
             </div>
             
             <div class="feature-grid">
@@ -1082,8 +1250,8 @@
             </div>
             <div class="feature-grid">
                 <!-- Tier 1 -->
-                <div class="pricing-card">
-                    <span class="pricing-tier">Targeted Review</span>
+                <div class="pricing-card highlight">
+                    <span class="pricing-tier" style="color: var(--accent-color);">Targeted Review</span>
                     <div class="pricing-amount">3 Hour Bundle</div>
                     <div class="pricing-save">$950</div>
                     <ul class="pricing-features">
@@ -1113,8 +1281,8 @@
                 </div>
 
                 <!-- Tier 3 -->
-                <div class="pricing-card">
-                    <span class="pricing-tier">End-to-End</span>
+                <div class="pricing-card highlight">
+                    <span class="pricing-tier" style="color: var(--accent-color);">End-to-End</span>
                     <div class="pricing-amount">Custom Bundle</div>
                     <div class="pricing-save">Schedule consultation</div>
                     <ul class="pricing-features">
