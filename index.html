@@ -808,6 +808,14 @@
             .status-value {
                 font-size: 0.85rem;
             }
+
+            /* Impact bar mobile */
+            .impact-bar {
+                font-size: 1.4rem;
+                padding: 20px 16px;
+                margin-top: 60px;
+                margin-bottom: -30px;
+            }
         }
 
         /* Very small screens */
@@ -856,6 +864,14 @@
 
             .faq-question {
                 font-size: 1rem;
+            }
+
+            /* Impact bar very small screens */
+            .impact-bar {
+                font-size: 1.2rem;
+                padding: 16px 12px;
+                margin-top: 50px;
+                margin-bottom: -25px;
             }
         }
 
@@ -1022,6 +1038,20 @@
                 font-size: 1.5rem !important;
             }
         }
+
+        /* Impact Bar */
+        .impact-bar {
+            width: 100vw;
+            margin-left: calc(-50vw + 50%);
+            background: #000;
+            color: #fff;
+            text-align: center;
+            padding: 24px 24px;
+            font-family: var(--serif-font);
+            font-size: 1.8rem;
+            margin-top: 100px;
+            margin-bottom: -50px;
+        }
     </style>
 </head>
 <body>
@@ -1106,8 +1136,13 @@
                 </div>
             </div>
 
+            <!-- Impact Bar -->
+            <div class="impact-bar">
+                <span>30x increase your admission chances</span>
+            </div>
+
             <!-- University Logo -->
-            <div class="university-logo-container" style="flex-direction: column; gap: 0; align-items: center;">
+            <div class="university-logo-container" style="flex-direction: column; gap: 0; align-items: center; border-top: none;">
                 <h3 style="font-family: var(--serif-font); font-size: 1.9rem; color: #000; margin-top: 20px;">Our Placements</h3>
                 <img src="./images/t20_logos.png" alt="Top Universities" class="university-logo">
             </div>
@@ -1119,26 +1154,26 @@
 
         <section class="section">
             <div class="section-header">
-                <p class="uppercase-tracking">The Reality</p>
-                <h2 class="section-title">30x increase your admission chances.</h2>
-                <p class="section-desc hide-on-mobile">In the T20 landscape, excellent grades and extracurriculars are merely the prerequisite. To stand out, you need more than achievement. You need a narrative that makes you impossible to ignore.</p>
+                <p class="uppercase-tracking">The Impact</p>
+                <h2 class="section-title">We guide you from 8th grade to T20 success</h2>
+                <p class="section-desc hide-on-mobile">In the T20 landscape, excellent grades and extracurriculars are merely the prerequisite. To stand out, you need more.</p>
             </div>
             
             <div class="feature-grid">
                 <div class="feature-card">
-                    <div class="feature-icon">✦</div>
-                    <h3 class="feature-title">Essay Storytelling</h3>
-                    <p class="feature-text">We don't just edit essays; we architect personal brands. We extract the unique thread in your story that admissions officers are looking for.</p>
-                </div>
-                <div class="feature-card">
                     <div class="feature-icon">♛</div>
-                    <h3 class="feature-title">Insider Strategy</h3>
-                    <p class="feature-text">Work directly with mentors from Ivy League & Top 20 universities. Learn the precise evaluation criteria used inside the decision room.</p>
+                    <h3 class="feature-title">Custom Roadmap</h3>
+                    <p class="feature-text">From 8th grade to T20 acceptance, we continuously strategize your roadmap, create profile impact, and ensure every milestone positions you for T20 admission.</p>
                 </div>
                 <div class="feature-card">
                     <div class="feature-icon">⚡</div>
-                    <h3 class="feature-title">Application Impact</h3>
-                    <p class="feature-text">Every word, every activity description, and every letter of recommendation is positioned to demonstrate intellectual vitality and leadership.</p>
+                    <h3 class="feature-title">Profile Building</h3>
+                    <p class="feature-text">Strategically develop your impact, extracurriculars, passion projects, competitions, leadership roles, and other achievments to stand out to admissions officers.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">✦</div>
+                    <h3 class="feature-title">Essay Storytelling</h3>
+                    <p class="feature-text">We don't just edit essays; we architect personal brands. We extract the unique thread in your story that admissions officers are looking for.</p>
                 </div>
             </div>
         </section>
