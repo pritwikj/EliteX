@@ -1,0 +1,20 @@
+Copy Update Method
+Here's the approach I used that can be applied to the other guides:
+1. Subtitle Update
+Pattern: Replace generic target audience with credibility/authority statement
+Before	After
+"For Families Targeting [schools]"	"The Insider Playbook from Former UC Readers"
+For other guides, use:
+Private & Ivy: Emphasize Ivy alumni/admissions expertise
+Essay System: Emphasize proven frameworks or success rate
+2. Benefits List Update
+Pattern: Replace vague claims with specific, concrete deliverables from the actual guide
+Vague (Before)	Specific (After)
+"Insider view of exactly how UCs evaluate..."	"How UC readers evaluate applications using the 14-factor Comprehensive Review"
+"Grade-by-grade roadmap..."	"Grade 9-12 timeline with specific benchmarks for each year"
+"Passion project strategies..."	"The Passion Project Formula to create a 'Spike' that stands out"
+Key principles:
+Use numbers (14-factor, 3 GPAs, Grade 9-12)
+Name the frameworks (Passion Project Formula, Comprehensive Review)
+Use terminology from the guide (builds trust that you'll get what's advertised)
+Be outcome-focused (what the reader will learn/achieve)
