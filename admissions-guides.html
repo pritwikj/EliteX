@@ -144,18 +144,10 @@
             align-items: center;
             text-align: center;
             padding: 120px 24px 80px;
-            background: #192822;
+            background: #ffffff;
             position: relative;
         }
 
-        .hero-section::before {
-            content: '';
-            position: absolute;
-            top: 0; left: 0; right: 0; bottom: 0;
-            background: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI0MCIgaGVpZ2h0PSI0MCIgdmlld0JveD0iMCAwIDQwIDQwIj4gPGc+IDxwYXRoIGQ9Ik0wIDBoNDB2NDBIMHoiIGZpbGw9Im5vbmUiLz4gPHBhdGggZD0iTTAgNDBoNDBWMDBIMHoiIGZpbGw9IiMxYTFhMWEiIG9wYWNpdHk9IjAuMDUiLz4gPC9nPiA8L3N2Zz4=');
-            opacity: 0.5;
-            pointer-events: none;
-        }
 
         .hero-kicker {
             margin-bottom: 24px;
@@ -175,14 +167,14 @@
             font-size: 3.5rem;
             margin-bottom: 24px;
             max-width: 900px;
-            color: #fff;
+            color: #1a1a1a;
             position: relative;
             z-index: 1;
         }
 
         .hero-subtitle {
             font-size: 1.25rem;
-            color: #aaa;
+            color: #555;
             max-width: 600px;
             margin: 0 auto 40px;
             font-weight: 300;
@@ -190,46 +182,63 @@
             z-index: 1;
         }
 
-        /* Product Thumbnails */
-        .product-thumbnails {
+        /* Hero Two-Column Layout */
+        .hero-content {
             display: flex;
-            justify-content: center;
-            gap: 24px;
-            margin-bottom: 40px;
+            align-items: center;
+            justify-content: space-between;
+            gap: 60px;
+            max-width: 1200px;
+            width: 100%;
             position: relative;
             z-index: 1;
         }
 
-        .product-thumb {
-            width: 120px;
-            height: 160px;
-            background: linear-gradient(135deg, #1a1a1a 0%, #2a2a2a 100%);
-            border: 2px solid var(--border-color);
+        .hero-text {
+            flex: 1;
+            max-width: 550px;
+            text-align: left;
+        }
+
+        .hero-text .hero-kicker {
+            margin-bottom: 24px;
+        }
+
+        .hero-text .hero-title {
+            text-align: left;
+        }
+
+        .hero-text .hero-subtitle {
+            margin: 0 0 40px;
+            text-align: left;
+        }
+
+        .hero-image {
+            flex: 1;
             display: flex;
-            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .hero-image img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 4px;
+        }
+
+        /* Placeholder for image (until user provides actual image) */
+        .hero-image-placeholder {
+            width: 100%;
+            max-width: 500px;
+            aspect-ratio: 4/3;
+            background: #f5f5f5;
+            border: 2px dashed #ccc;
+            display: flex;
             align-items: center;
             justify-content: center;
-            padding: 16px;
-            transition: all 0.3s ease;
-        }
-
-        .product-thumb:hover {
-            border-color: var(--accent-color);
-            transform: translateY(-5px);
-        }
-
-        .product-thumb-icon {
-            font-size: 24px;
-            color: var(--accent-color);
-            margin-bottom: 12px;
-        }
-
-        .product-thumb-title {
-            font-size: 0.7rem;
+            color: #999;
+            font-size: 1rem;
             text-align: center;
-            color: #ccc;
-            text-transform: uppercase;
-            letter-spacing: 0.05em;
         }
 
         .btn-primary {
@@ -1182,22 +1191,31 @@
                 font-size: 1rem;
             }
 
-            .product-thumbnails {
-                gap: 12px;
+            .hero-content {
+                flex-direction: column;
+                gap: 40px;
             }
 
-            .product-thumb {
-                width: 90px;
-                height: 120px;
-                padding: 12px;
+            .hero-text {
+                max-width: none;
+                text-align: center;
             }
 
-            .product-thumb-icon {
-                font-size: 18px;
+            .hero-text .hero-title,
+            .hero-text .hero-subtitle {
+                text-align: center;
             }
 
-            .product-thumb-title {
-                font-size: 0.6rem;
+            .hero-text .hero-subtitle {
+                margin: 0 auto 40px;
+            }
+
+            .hero-image {
+                order: 2;
+            }
+
+            .hero-image-placeholder {
+                max-width: 350px;
             }
 
             .trust-badges {
@@ -1391,70 +1409,55 @@
     <main>
         <!-- HERO SECTION -->
         <section class="hero-section">
-            <div class="hero-kicker">Self-Paced College Prep Resources</div>
-            <h1 class="hero-title"><span style="color: var(--accent-color);">The T20 Application Blueprint:</span><br>Guaranteed Elite Admissions Success</h1>
-            <p class="hero-subtitle">
-                Insider strategies from T20 Admissions Officers. Gain the competitive edge that gets you accepted.
-            </p>
-
-            <div class="product-thumbnails">
-                <div class="product-thumb">
-                    <div class="product-thumb-icon">🎓</div>
-                    <div class="product-thumb-title">UC Roadmap</div>
+            <div class="hero-content">
+                <div class="hero-text">
+                    <div class="hero-kicker">Digital College Prep Resources</div>
+                    <h1 class="hero-title"><span style="color: var(--accent-color);">The T20 Application Blueprint:</span><br>Guaranteed Elite Admissions Success</h1>
+                    <p class="hero-subtitle">
+                        Insider strategies from T20 Admissions Officers. Gain the competitive edge that gets you accepted.
+                    </p>
+                    <a href="#products" class="btn-primary">View the Guides</a>
                 </div>
-                <div class="product-thumb">
-                    <div class="product-thumb-icon">🏛️</div>
-                    <div class="product-thumb-title">Ivy & Private</div>
+                <div class="hero-image">
+                    <!-- Placeholder until user provides actual image -->
+                    <div class="hero-image-placeholder">
+                        Image placeholder<br>(provide image path)
+                    </div>
                 </div>
-                <div class="product-thumb">
-                    <div class="product-thumb-icon">✍️</div>
-                    <div class="product-thumb-title">Essay System</div>
-                </div>
-            </div>
-
-            <a href="#products" class="btn-primary">View the Guides</a>
-
-            <div class="trust-badges">
-                <span class="trust-badge"><span class="trust-badge-icon">🔒</span> Secure Checkout</span>
-                <span class="trust-badge"><span class="trust-badge-icon">⚡</span> Instant Download</span>
-                <span class="trust-badge"><span class="trust-badge-icon">♾️</span> Lifetime Access</span>
             </div>
         </section>
 
         <!-- PROBLEM SECTION -->
         <section class="problem-section">
             <div class="section-header">
-                <p class="uppercase-tracking">The Challenge</p>
-                <h2 class="section-title">The College Admissions System Is Overwhelming</h2>
-                <p class="section-desc">Especially for first-time families navigating the U.S. system.</p>
+                <h2 class="section-title">Why Most Students Don't Get Into T20 Colleges</h2>
+                <p class="section-desc">3 critical mistakes that cost qualified students their dream schools.</p>
             </div>
 
             <div class="problem-grid">
-                <div class="problem-card">
-                    <div class="problem-icon">?</div>
-                    <h3 class="problem-title">Don't Know Where to Start</h3>
-                    <p class="problem-text">The process feels like a maze. What should you focus on in 9th grade vs. 11th? When do applications actually open?</p>
+                <div class="problem-card" style="background: transparent; border: none;">
+                    <div class="problem-icon">📅</div>
+                    <h3 class="problem-title" style="font-size: 1.6rem;">No Strategy</h3>
+                    <p class="problem-text">By junior year, it's already too late to build the profile elite schools want.</p>
                 </div>
-                <div class="problem-card">
-                    <div class="problem-icon">📚</div>
-                    <h3 class="problem-title">Confusing Terminology</h3>
-                    <p class="problem-text">PIQs, ED/EA, holistic review, demonstrated interest... The jargon alone can make you feel lost and behind.</p>
+                <div class="problem-card" style="background: transparent; border: none;">
+                    <div class="problem-icon">🗺️</div>
+                    <h3 class="problem-title" style="font-size: 1.6rem;">No Roadmap</h3>
+                    <p class="problem-text">Wasting time on the wrong activities and missing milestones</p>
                 </div>
-                <div class="problem-card">
-                    <div class="problem-icon">😰</div>
-                    <h3 class="problem-title">Fear of Falling Behind</h3>
-                    <p class="problem-text">While you're researching, other families are already executing proven strategies. Every month of delay is a missed opportunity to stand out.</p>
+                <div class="problem-card" style="background: transparent; border: none;">
+                    <div class="problem-icon">🚫</div>
+                    <h3 class="problem-title" style="font-size: 1.6rem;">Skipping the T20 Checklist</h3>
+                    <p class="problem-text">Miss even one T20 signal, and your application gets rejected.</p>
                 </div>
             </div>
-
-            <p class="empathy-statement">"You're not alone. Most parents feel lost — even ones that went to college in the U.S. The system wasn't designed to be transparent."</p>
         </section>
 
         <!-- PRODUCTS HEADER -->
         <section id="products" class="section" style="padding-top: 50px; padding-bottom: 0;">
             <div class="section-header">
                 <p class="uppercase-tracking">The Guides</p>
-                <h2 class="section-title">Everything You Need to Navigate T20 Admissions</h2>
+                <h2 class="section-title">Step-by-Step Guide On How To Get Into T20s</h2>
             </div>
         </section>
 
