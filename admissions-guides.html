@@ -216,12 +216,13 @@
         .hero-image {
             flex: 1;
             display: flex;
-            justify-content: center;
+            justify-content: flex-end;
             align-items: center;
+            transform: translateX(90px);
         }
 
         .hero-image img {
-            max-width: 100%;
+            max-width: 110%;
             height: auto;
             border-radius: 4px;
         }
@@ -330,7 +331,7 @@
         /* --- Problem Section --- */
         .problem-section {
             background: var(--surface-color);
-            padding: 100px 24px;
+            padding: 65px 24px 40px;
         }
 
         .problem-grid {
@@ -554,6 +555,26 @@
             font-weight: bold;
         }
 
+        .btn-primary-blue {
+            background-color: #0281c7;
+            color: #fff;
+            padding: 16px 40px;
+            border-radius: 2px;
+            text-decoration: none;
+            font-weight: 600;
+            letter-spacing: 0.5px;
+            transition: all 0.3s ease;
+            border: 1px solid #0281c7;
+            text-transform: uppercase;
+            font-size: 0.9rem;
+        }
+
+        .btn-primary-blue:hover {
+            background-color: #026a9e;
+            border-color: #026a9e;
+            transform: translateY(-2px);
+        }
+
         .product-price {
             margin: 32px 0;
         }
@@ -565,7 +586,7 @@
         }
 
         .product-note {
-            margin-top: 16px;
+            margin-top: 26px;
             font-size: 0.85rem;
             color: #666;
         }
@@ -1419,10 +1440,7 @@
                     <a href="#products" class="btn-primary">View the Guides</a>
                 </div>
                 <div class="hero-image">
-                    <!-- Placeholder until user provides actual image -->
-                    <div class="hero-image-placeholder">
-                        Image placeholder<br>(provide image path)
-                    </div>
+                    <img src="./images/guides_hero_img.png" alt="T20 Admissions Guides">
                 </div>
             </div>
         </section>
@@ -1453,11 +1471,17 @@
             </div>
         </section>
 
+        <!-- STUDENT SUCCESS LOGOS -->
+        <section class="section-full" style="background: #ffffff; padding: 60px 24px 40px; text-align: center;">
+            <h3 style="font-family: var(--serif-font); font-size: 1.75rem; color: #1a1a1a; margin-bottom: 30px;">Here are some of the colleges our students got into though:</h3>
+            <img src="./images/t20_logos.png" alt="T20 College Logos" style="max-width: 900px; width: 100%; height: auto;">
+        </section>
+
         <!-- PRODUCTS HEADER -->
         <section id="products" class="section" style="padding-top: 50px; padding-bottom: 0;">
-            <div class="section-header">
-                <p class="uppercase-tracking">The Guides</p>
-                <h2 class="section-title">Step-by-Step Guide On How To Get Into T20s</h2>
+            <div class="section-header" style="margin-bottom: 38px;">
+                <p class="uppercase-tracking" style="position: relative; top: -12px;">You Can Do the Same</p>
+                <h2 class="section-title">Step-by-Step Guides On How To Get Into T20s</h2>
             </div>
         </section>
 
@@ -1465,30 +1489,24 @@
         <section id="uc-roadmap" class="product-section product-section-alt" style="padding-top: 80px;">
             <div class="product-container">
                 <div class="product-mockup">
-                    <div class="product-placeholder">
-                        <div class="product-placeholder-icon">🎓</div>
-                        <div class="product-placeholder-title">UC Roadmap</div>
-                        <div class="product-placeholder-subtitle">Digital Guide</div>
-                    </div>
+                    <img src="./images/uc_roadmap_guide.png" alt="UC Roadmap Guide" style="max-width: 320px; width: 100%; height: auto; box-shadow: 0 20px 60px rgba(0,0,0,0.5);">
                 </div>
                 <div class="product-details">
                     <div class="product-label">Guide #1</div>
-                    <h2 class="product-title">The UC Roadmap</h2>
-                    <p class="product-subtitle">The Insider Playbook from Former UC Readers</p>
+                    <h2 class="product-title">The Full UC Roadmap</h2>
+                    <p class="product-subtitle">The Insider Playbook from UC Admissions Officers</p>
 
                     <ul class="product-benefits">
-                        <li>How UC readers evaluate applications using the 14-factor Comprehensive Review</li>
-                        <li>The 3 UC GPA calculations and how to maximize each one</li>
-                        <li>Grade 9-12 timeline with specific benchmarks for each year</li>
-                        <li>The Passion Project Formula to create a "Spike" that stands out</li>
-                        <li>PIQ strategies: choosing the right 4 prompts and the exact tone readers want</li>
+                        <li>Building a unique "spike" profile- the secret formula and proven strategies</li>
+                        <li>UC officers share the standout 9-12 roadmap with special profile-building checklist</li>
+                        <li>Proven strategies used by students admitted to UCLA, Berkeley, and beyond</li>
                     </ul>
 
                     <div class="product-price">
                         <span class="product-price-amount">$97</span>
                     </div>
 
-                    <a href="#" class="btn-primary">Get the UC Roadmap</a>
+                    <a href="#" class="btn-primary-blue">Get the UC Roadmap</a>
                     <p class="product-note">Instant digital delivery. PDF format. Lifetime access.</p>
                 </div>
             </div>
@@ -1498,30 +1516,24 @@
         <section id="ivy-roadmap" class="product-section">
             <div class="product-container product-container-reversed">
                 <div class="product-mockup">
-                    <div class="product-placeholder">
-                        <div class="product-placeholder-icon">🏛️</div>
-                        <div class="product-placeholder-title">Private & Ivy</div>
-                        <div class="product-placeholder-subtitle">Digital Guide</div>
-                    </div>
+                    <img src="./images/ivy_roadmap_guide.png" alt="Private & Ivy Roadmap Guide" style="max-width: 320px; width: 100%; height: auto; box-shadow: 0 20px 60px rgba(0,0,0,0.5);">
                 </div>
                 <div class="product-details">
                     <div class="product-label">Guide #2</div>
-                    <h2 class="product-title">The Private & Ivy Roadmap</h2>
-                    <p class="product-subtitle">An Insider Playbook from Ivy League Alumni & Admissions Experts</p>
+                    <h2 class="product-title">The Ivy & T20 Private Roadmap</h2>
+                    <p class="product-subtitle">The Insider Playbook from Ivy League Admissions Officers</p>
 
                     <ul class="product-benefits">
-                        <li>How admissions officers score you using the 4-Quadrant Evaluation framework</li>
-                        <li>The 4 scores that determine your fate: Academics, Impact, Character & Intellectual Vitality</li>
-                        <li>Build a "Spike" profile that makes you unforgettable — not just well-rounded</li>
-                        <li>The 4-Year Ivy Admissions Roadmap with year-by-year benchmarks</li>
-                        <li>LOR strategy and interview prep that pass the "Roommate Test"</li>
+                        <li>Ivy officers share their secret rubric for evaluating applications</li>
+                        <li>A unique roadmap with spike profile-building checklist</li>
+                        <li>Proven strategies to stand out from 50,000+ applicants</li>
                     </ul>
 
                     <div class="product-price">
                         <span class="product-price-amount">$97</span>
                     </div>
 
-                    <a href="#" class="btn-primary">Get the Private & Ivy Roadmap</a>
+                    <a href="#" class="btn-primary-blue">Get the Ivy & T20 Private Roadmap</a>
                     <p class="product-note">Instant digital delivery. PDF format. Lifetime access.</p>
                 </div>
             </div>
@@ -1531,30 +1543,24 @@
         <section id="essay-system" class="product-section product-section-alt">
             <div class="product-container">
                 <div class="product-mockup">
-                    <div class="product-placeholder">
-                        <div class="product-placeholder-icon">✍️</div>
-                        <div class="product-placeholder-title">Essay System</div>
-                        <div class="product-placeholder-subtitle">Digital Guide</div>
-                    </div>
+                    <img src="./images/essay_guide.png" alt="Essay System Guide" style="max-width: 320px; width: 100%; height: auto; box-shadow: 0 20px 60px rgba(0,0,0,0.5);">
                 </div>
                 <div class="product-details">
                     <div class="product-label">Guide #3</div>
-                    <h2 class="product-title">The Complete College Essay Writing System</h2>
+                    <h2 class="product-title">The Unique T20 College Essay Writing Guide</h2>
                     <p class="product-subtitle">The Step-by-Step System Behind T20-Accepted Essays</p>
 
                     <ul class="product-benefits">
-                        <li>The Narrative Arc and Montage structure templates — two proven frameworks for the Common App</li>
-                        <li>The "SAIR" method for UC PIQs: the 4-part formula (Situation, Action, Impact, Reflection) that proves impact in 350 words</li>
-                        <li>The 3-Layer "Why Us" Framework: Academic Fit (60%), Social Fit (30%), Campus Contribution (10%)</li>
-                        <li>Topic Evaluation Scorecard to test your ideas before writing (score 15+/20 to proceed)</li>
-                        <li>Annotated sample essays with line-by-line counselor commentary showing exactly why they worked</li>
+                        <li>The secret strategies behind Harvard, Stanford, and UC Berkeley accepted essays</li>
+                        <li>A proven checklist and hook formula for showcasing your unique spike</li>
+                        <li>Ivy and UC officers share their secret rubric for evaluating essays</li>
                     </ul>
 
                     <div class="product-price">
                         <span class="product-price-amount">$97</span>
                     </div>
 
-                    <a href="#" class="btn-primary">Get the Essay System</a>
+                    <a href="#" class="btn-primary-blue">Get the Unique Essay Guide</a>
                     <p class="product-note">Instant digital delivery. PDF format. Lifetime access.</p>
                 </div>
             </div>
