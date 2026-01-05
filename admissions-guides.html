@@ -566,7 +566,7 @@
             transition: all 0.3s ease;
             border: 1px solid #0281c7;
             text-transform: uppercase;
-            font-size: 0.9rem;
+            font-size: 0.97rem;
         }
 
         .btn-primary-blue:hover {
@@ -581,7 +581,7 @@
 
         .product-price-amount {
             font-family: var(--serif-font);
-            font-size: 2.5rem;
+            font-size: 1.8rem;
             color: var(--accent-color);
         }
 
@@ -805,7 +805,7 @@
             background: #ffffff;
             color: #000;
             padding-top: 60px;
-            padding-bottom: 40px;
+            padding-bottom: 20px;
         }
 
         .authority-section .section-title {
@@ -866,7 +866,7 @@
             justify-content: center;
             gap: 60px;
             flex-wrap: wrap;
-            padding: 40px 24px;
+            padding: 25px 24px 5px;
             border-top: 1px solid #ddd;
             max-width: 1000px;
             margin: 0 auto;
@@ -1032,6 +1032,7 @@
         /* --- FAQ Section --- */
         .faq-section {
             background: var(--bg-color);
+            padding-top: 60px;
         }
 
         .faq-container {
@@ -1060,7 +1061,7 @@
         .final-cta-section {
             background: #192822;
             text-align: center;
-            padding: 100px 24px;
+            padding: 45px 24px 40px;
         }
 
         .final-cta-title {
@@ -1209,6 +1210,10 @@
 
             .menu-toggle {
                 display: block;
+                font-size: 28px;
+                padding: 10px;
+                min-width: 44px;
+                min-height: 44px;
             }
 
             .header-nav.open {
@@ -1258,6 +1263,12 @@
 
             .hero-image {
                 order: 2;
+                transform: none;
+                justify-content: center;
+            }
+
+            .hero-image img {
+                max-width: 100%;
             }
 
             .hero-image-placeholder {
@@ -1337,6 +1348,9 @@
 
             .bundle-side-by-side {
                 flex-direction: column;
+                transform: none;
+                margin-top: 0;
+                margin-bottom: 20px;
             }
 
             .bundle-hero-img {
@@ -1405,11 +1419,21 @@
             .footer-brand {
                 max-width: none;
             }
+
+            .problem-card {
+                border: 1px solid var(--border-color) !important;
+                padding: 24px 16px;
+                border-radius: 4px;
+            }
         }
 
         @media (max-width: 480px) {
             .hero-title {
                 font-size: 1.9rem;
+            }
+
+            .hero-subtitle {
+                font-size: 0.95rem;
             }
 
             .section-title {
@@ -1420,12 +1444,131 @@
                 font-size: 1.5rem;
             }
 
+            .product-subtitle {
+                font-size: 1rem;
+            }
+
             .bundle-title {
                 font-size: 1.5rem;
             }
 
+            .bundle-subtitle {
+                font-size: 1rem;
+            }
+
             .product-placeholder {
                 max-width: 220px;
+            }
+
+            /* Bundle section mobile */
+            .bundle-side-by-side {
+                gap: 24px;
+            }
+
+            .bundle-hero-img {
+                max-width: 320px;
+            }
+
+            .bundle-pricing {
+                padding: 24px 16px;
+                max-width: 100%;
+            }
+
+            .bundle-price-current {
+                font-size: 2.2rem;
+            }
+
+            /* Testimonial carousel */
+            .testimonial-card {
+                width: 240px;
+                padding: 20px;
+            }
+
+            .testimonial-quote {
+                font-size: 0.85rem;
+            }
+
+            /* Problem cards */
+            .problem-card {
+                padding: 24px 16px;
+            }
+
+            .problem-title {
+                font-size: 1.4rem;
+            }
+
+            .problem-text {
+                font-size: 0.9rem;
+            }
+
+            /* Buttons - touch targets */
+            .btn-primary {
+                padding: 18px 32px;
+                font-size: 0.85rem;
+            }
+
+            .btn-ivy {
+                font-size: 0.9rem;
+            }
+
+            .btn-outline {
+                padding: 16px 24px;
+                width: 100%;
+                text-align: center;
+            }
+
+            .btn-primary-large {
+                padding: 18px 40px;
+            }
+
+            /* Trust badges */
+            .trust-badges {
+                gap: 16px;
+            }
+
+            /* Authority section */
+            .credentials-bar {
+                gap: 24px;
+            }
+
+            .credential-number {
+                font-size: 1.8rem;
+            }
+
+            /* FAQ section */
+            .faq-question {
+                font-size: 1.1rem;
+            }
+
+            .faq-item {
+                padding: 20px 0;
+            }
+
+            /* Footer */
+            .footer-container {
+                gap: 30px;
+            }
+
+            /* Section spacing */
+            .section {
+                padding: 50px 16px;
+            }
+
+            .section-full {
+                padding: 50px 16px;
+            }
+
+            .product-section {
+                padding: 50px 16px 30px;
+            }
+
+            /* Final CTA */
+            .final-cta-section {
+                padding: 40px 16px 35px;
+            }
+
+            .final-cta-title {
+                font-size: 1.6rem;
             }
 
             .final-cta-secondary {
@@ -1442,7 +1585,7 @@
         </a>
         <button class="menu-toggle">☰</button>
         <nav class="header-nav">
-            <a href="index.html" class="header-link">Mentorship</a>
+            <a href="index.html" class="header-link">Counseling</a>
             <a href="#products" class="header-link">Guides</a>
             <a href="#testimonials" class="header-link">Success Stories</a>
             <a href="#faq" class="header-link">FAQ</a>
@@ -1457,7 +1600,7 @@
             <div class="hero-content">
                 <div class="hero-text">
                     <div class="hero-kicker">Digital College Prep Resources</div>
-                    <h1 class="hero-title"><span style="color: var(--accent-color);">The T20 Application Blueprint:</span><br>Guaranteed Elite Admissions Success</h1>
+                    <h1 class="hero-title"><span style="color: var(--accent-color);">The Elite Application Blueprint:</span><br>Guaranteed T20 Admissions Success</h1>
                     <p class="hero-subtitle">
                         Insider strategies from T20 Admissions Officers. Gain the competitive edge that gets you accepted.
                     </p>
@@ -1497,7 +1640,7 @@
 
         <!-- STUDENT SUCCESS LOGOS -->
         <section class="section-full" style="background: #ffffff; padding: 60px 24px 40px; text-align: center;">
-            <h3 style="font-family: var(--serif-font); font-size: 1.75rem; color: #1a1a1a; margin-bottom: 30px;">Here are some of the colleges our students got into though:</h3>
+            <h3 style="font-family: var(--serif-font); font-size: 1.75rem; color: #1a1a1a; margin-bottom: 30px;">Colleges our students have gotten into:</h3>
             <img src="./images/t20_logos.png" alt="T20 College Logos" style="max-width: 900px; width: 100%; height: auto;">
         </section>
 
@@ -1509,14 +1652,41 @@
             </div>
         </section>
 
-        <!-- PRODUCT 1: UC ROADMAP -->
-        <section id="uc-roadmap" class="product-section product-section-alt" style="padding-top: 80px;">
+        <!-- PRODUCT 1: PRIVATE & IVY ROADMAP -->
+        <section id="ivy-roadmap" class="product-section product-section-alt" style="padding-top: 80px;">
             <div class="product-container">
+                <div class="product-mockup">
+                    <img src="./images/ivy_roadmap_guide.png" alt="Private & Ivy Roadmap Guide" style="max-width: 320px; width: 100%; height: auto; box-shadow: 0 20px 60px rgba(0,0,0,0.5);">
+                </div>
+                <div class="product-details">
+                    <div class="product-label">Guide #1</div>
+                    <h2 class="product-title">The Ivy & T20 Private Roadmap</h2>
+                    <p class="product-subtitle">The Insider Playbook from Ivy League Admissions Officers</p>
+
+                    <ul class="product-benefits">
+                        <li>Ivy officers share their secret rubric for evaluating applications</li>
+                        <li>A unique roadmap with spike profile-building checklist</li>
+                        <li>Proven strategies to stand out from 50,000+ applicants</li>
+                    </ul>
+
+                    <div class="product-price">
+                        <span class="product-price-amount">$97</span>
+                    </div>
+
+                    <a href="#" class="btn-primary-blue btn-ivy">Get the Ivy & T20 Private Roadmap</a>
+                    <p class="product-note">Instant digital delivery. PDF format. Lifetime access.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- PRODUCT 2: UC ROADMAP -->
+        <section id="uc-roadmap" class="product-section">
+            <div class="product-container product-container-reversed">
                 <div class="product-mockup">
                     <img src="./images/uc_roadmap_guide.png" alt="UC Roadmap Guide" style="max-width: 320px; width: 100%; height: auto; box-shadow: 0 20px 60px rgba(0,0,0,0.5);">
                 </div>
                 <div class="product-details">
-                    <div class="product-label">Guide #1</div>
+                    <div class="product-label">Guide #2</div>
                     <h2 class="product-title">The Full UC Roadmap</h2>
                     <p class="product-subtitle">The Insider Playbook from UC Admissions Officers</p>
 
@@ -1531,33 +1701,6 @@
                     </div>
 
                     <a href="#" class="btn-primary-blue">Get the UC Roadmap</a>
-                    <p class="product-note">Instant digital delivery. PDF format. Lifetime access.</p>
-                </div>
-            </div>
-        </section>
-
-        <!-- PRODUCT 2: PRIVATE & IVY ROADMAP -->
-        <section id="ivy-roadmap" class="product-section">
-            <div class="product-container product-container-reversed">
-                <div class="product-mockup">
-                    <img src="./images/ivy_roadmap_guide.png" alt="Private & Ivy Roadmap Guide" style="max-width: 320px; width: 100%; height: auto; box-shadow: 0 20px 60px rgba(0,0,0,0.5);">
-                </div>
-                <div class="product-details">
-                    <div class="product-label">Guide #2</div>
-                    <h2 class="product-title">The Ivy & T20 Private Roadmap</h2>
-                    <p class="product-subtitle">The Insider Playbook from Ivy League Admissions Officers</p>
-
-                    <ul class="product-benefits">
-                        <li>Ivy officers share their secret rubric for evaluating applications</li>
-                        <li>A unique roadmap with spike profile-building checklist</li>
-                        <li>Proven strategies to stand out from 50,000+ applicants</li>
-                    </ul>
-
-                    <div class="product-price">
-                        <span class="product-price-amount">$97</span>
-                    </div>
-
-                    <a href="#" class="btn-primary-blue">Get the Ivy & T20 Private Roadmap</a>
                     <p class="product-note">Instant digital delivery. PDF format. Lifetime access.</p>
                 </div>
             </div>
@@ -1682,60 +1825,54 @@
                     <div class="testimonial-card">
                         <div class="testimonial-quote">The UC Roadmap was exactly what we needed. We finally understood what our daughter should focus on each year. No more guessing or anxiety about missing something important.</div>
                         <div class="testimonial-author">
-                            <img src="./images/testimonials/vikram.png" alt="Vikram M." class="testimonial-author-photo">
                             <div class="author-details">
-                                <span class="author-name">Vikram M.</span>
-                                <span class="author-info">Parent of UC Berkeley '29 Student</span>
+                                <span class="author-name">Advik M.</span>
+                                <span class="author-info">Parent of Princeton '29 Student</span>
                             </div>
                         </div>
                     </div>
                     <div class="testimonial-card">
                         <div class="testimonial-quote">The Essay System transformed my son's approach to writing. He went from staring at a blank page to having a clear framework. His Common App essay was authentic and powerful.</div>
                         <div class="testimonial-author">
-                            <img src="./images/testimonials/emily.png" alt="Emily T." class="testimonial-author-photo">
                             <div class="author-details">
-                                <span class="author-name">Emily T.</span>
-                                <span class="author-info">Parent of UPenn '27 Student</span>
+                                <span class="author-name">Jennifer W.</span>
+                                <span class="author-info">Parent of Duke '28 Student</span>
                             </div>
                         </div>
                     </div>
                     <div class="testimonial-card">
                         <div class="testimonial-quote">As first-generation parents, we had no idea how the Ivy League process worked. The Private & Ivy Roadmap explained everything in terms we could understand. Worth every penny.</div>
                         <div class="testimonial-author">
-                            <img src="./images/testimonials/kevin.png" alt="Kevin C." class="testimonial-author-photo">
                             <div class="author-details">
-                                <span class="author-name">Kevin C.</span>
-                                <span class="author-info">Parent of Harvard '27 Student</span>
+                                <span class="author-name">Michael R.</span>
+                                <span class="author-info">Parent of MIT '27 Student</span>
                             </div>
                         </div>
                     </div>
                     <div class="testimonial-card">
                         <div class="testimonial-quote">We bought the complete bundle and it was the best investment we made. Having all three guides gave us a comprehensive strategy. My daughter got into UCLA!</div>
                         <div class="testimonial-author">
-                            <img src="./images/testimonials/priya.png" alt="Priya S." class="testimonial-author-photo">
                             <div class="author-details">
-                                <span class="author-name">Priya S.</span>
-                                <span class="author-info">Parent of UCLA '29 Student</span>
+                                <span class="author-name">Sanvi S.</span>
+                                <span class="author-info">Admitted to Columbia '29</span>
                             </div>
                         </div>
                     </div>
                     <div class="testimonial-card">
                         <div class="testimonial-quote">The step-by-step approach made everything manageable. Instead of overwhelming information, we had clear action items for each stage. Highly recommend for any parent.</div>
                         <div class="testimonial-author">
-                            <img src="./images/testimonials/lakshmi.png" alt="Lakshmi S." class="testimonial-author-photo">
                             <div class="author-details">
-                                <span class="author-name">Lakshmi S.</span>
-                                <span class="author-info">Parent of Yale '28 Student</span>
+                                <span class="author-name">Anu S.</span>
+                                <span class="author-info">Admitted to Northwestern '28</span>
                             </div>
                         </div>
                     </div>
                     <div class="testimonial-card">
                         <div class="testimonial-quote">I wish we had found these guides earlier. The PIQ templates alone saved us hours of stress. My son's essays finally captured who he really is.</div>
                         <div class="testimonial-author">
-                            <img src="./images/testimonials/maya.jpg" alt="Maya K." class="testimonial-author-photo">
                             <div class="author-details">
-                                <span class="author-name">Maya K.</span>
-                                <span class="author-info">Parent of UCSD '29 Student</span>
+                                <span class="author-name">Amanda C.</span>
+                                <span class="author-info">Admitted to Brown '29</span>
                             </div>
                         </div>
                     </div>
@@ -1743,60 +1880,54 @@
                     <div class="testimonial-card">
                         <div class="testimonial-quote">The UC Roadmap was exactly what we needed. We finally understood what our daughter should focus on each year. No more guessing or anxiety about missing something important.</div>
                         <div class="testimonial-author">
-                            <img src="./images/testimonials/vikram.png" alt="Vikram M." class="testimonial-author-photo">
                             <div class="author-details">
-                                <span class="author-name">Vikram M.</span>
-                                <span class="author-info">Parent of UC Berkeley '29 Student</span>
+                                <span class="author-name">Advik M.</span>
+                                <span class="author-info">Parent of Princeton '29 Student</span>
                             </div>
                         </div>
                     </div>
                     <div class="testimonial-card">
                         <div class="testimonial-quote">The Essay System transformed my son's approach to writing. He went from staring at a blank page to having a clear framework. His Common App essay was authentic and powerful.</div>
                         <div class="testimonial-author">
-                            <img src="./images/testimonials/emily.png" alt="Emily T." class="testimonial-author-photo">
                             <div class="author-details">
-                                <span class="author-name">Emily T.</span>
-                                <span class="author-info">Parent of UPenn '27 Student</span>
+                                <span class="author-name">Jennifer W.</span>
+                                <span class="author-info">Parent of Duke '28 Student</span>
                             </div>
                         </div>
                     </div>
                     <div class="testimonial-card">
                         <div class="testimonial-quote">As first-generation parents, we had no idea how the Ivy League process worked. The Private & Ivy Roadmap explained everything in terms we could understand. Worth every penny.</div>
                         <div class="testimonial-author">
-                            <img src="./images/testimonials/kevin.png" alt="Kevin C." class="testimonial-author-photo">
                             <div class="author-details">
-                                <span class="author-name">Kevin C.</span>
-                                <span class="author-info">Parent of Harvard '27 Student</span>
+                                <span class="author-name">Michael R.</span>
+                                <span class="author-info">Parent of MIT '27 Student</span>
                             </div>
                         </div>
                     </div>
                     <div class="testimonial-card">
                         <div class="testimonial-quote">We bought the complete bundle and it was the best investment we made. Having all three guides gave us a comprehensive strategy. My daughter got into UCLA!</div>
                         <div class="testimonial-author">
-                            <img src="./images/testimonials/priya.png" alt="Priya S." class="testimonial-author-photo">
                             <div class="author-details">
-                                <span class="author-name">Priya S.</span>
-                                <span class="author-info">Parent of UCLA '29 Student</span>
+                                <span class="author-name">Sanvi S.</span>
+                                <span class="author-info">Admitted to Columbia '29</span>
                             </div>
                         </div>
                     </div>
                     <div class="testimonial-card">
                         <div class="testimonial-quote">The step-by-step approach made everything manageable. Instead of overwhelming information, we had clear action items for each stage. Highly recommend for any parent.</div>
                         <div class="testimonial-author">
-                            <img src="./images/testimonials/lakshmi.png" alt="Lakshmi S." class="testimonial-author-photo">
                             <div class="author-details">
-                                <span class="author-name">Lakshmi S.</span>
-                                <span class="author-info">Parent of Yale '28 Student</span>
+                                <span class="author-name">Anu S.</span>
+                                <span class="author-info">Admitted to Northwestern '28</span>
                             </div>
                         </div>
                     </div>
                     <div class="testimonial-card">
                         <div class="testimonial-quote">I wish we had found these guides earlier. The PIQ templates alone saved us hours of stress. My son's essays finally captured who he really is.</div>
                         <div class="testimonial-author">
-                            <img src="./images/testimonials/maya.jpg" alt="Maya K." class="testimonial-author-photo">
                             <div class="author-details">
-                                <span class="author-name">Maya K.</span>
-                                <span class="author-info">Parent of UCSD '29 Student</span>
+                                <span class="author-name">Amanda C.</span>
+                                <span class="author-info">Admitted to Brown '29</span>
                             </div>
                         </div>
                     </div>
@@ -1825,8 +1956,8 @@
                 </div>
 
                 <div class="faq-item">
-                    <h4 class="faq-question">Does this guarantee admission?</h4>
-                    <p class="faq-answer">No resource can guarantee admission to any college. What these guides do is give you the same strategic frameworks and insider knowledge that families who work with expensive private counselors receive. Your child's success ultimately depends on how they apply these strategies.</p>
+                    <h4 class="faq-question">Does this 100% guarantee admission?</h4>
+                    <p class="faq-answer">No resource can 100% guarantee admission to any college. What these guides do is give you the same strategic frameworks and insider knowledge that families who work with expensive private counselors receive. Your child's success ultimately depends on how they apply these strategies.</p>
                 </div>
 
                 <div class="faq-item">
@@ -1855,13 +1986,13 @@
                 <a href="#bundle" class="btn-primary btn-primary-large">Get Complete Bundle - $247</a>
                 <p class="cta-or">or choose individual guides</p>
                 <div class="final-cta-secondary">
-                    <a href="#uc-roadmap" class="btn-outline">UC Roadmap - $97</a>
                     <a href="#ivy-roadmap" class="btn-outline">Private & Ivy - $97</a>
+                    <a href="#uc-roadmap" class="btn-outline">UC Roadmap - $97</a>
                     <a href="#essay-system" class="btn-outline">Essay System - $97</a>
                 </div>
             </div>
 
-            <p class="final-trust">Secure checkout • Instant delivery • PDF format</p>
+            <p class="final-trust">LInstant delivery • PDF format • Lifetime Access</p>
         </section>
     </main>
 
