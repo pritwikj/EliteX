@@ -1196,6 +1196,10 @@
         }
 
         @media (max-width: 768px) {
+            .hide-mobile {
+                display: none;
+            }
+
             .header {
                 padding: 6px 20px;
             }
@@ -1335,7 +1339,7 @@
             }
 
             .bundle-section {
-                padding: 60px 16px;
+                padding: 60px 16px 40px;
             }
 
             .bundle-title {
@@ -1351,10 +1355,16 @@
                 transform: none;
                 margin-top: 0;
                 margin-bottom: 20px;
+                gap: 20px;
             }
 
             .bundle-hero-img {
-                max-width: 450px;
+                max-width: 500px;
+                margin-bottom: -25px;
+            }
+
+            .bundle-pricing {
+                margin-bottom: 30px;
             }
 
             .bundle-product-img {
@@ -1420,10 +1430,31 @@
                 max-width: none;
             }
 
+            /* Authority section mobile adjustments */
+            .authority-section .section-desc {
+                display: none;
+            }
+
+            .authority-section .section-header .uppercase-tracking {
+                margin-bottom: 16px;
+            }
+
             .problem-card {
                 border: 1px solid var(--border-color) !important;
                 padding: 24px 16px;
                 border-radius: 4px;
+            }
+
+            .faq-section {
+                padding-top: 0;
+            }
+
+            .faq-section .section-title {
+                margin-top: 0;
+            }
+
+            .testimonial-section {
+                padding-bottom: 40px;
             }
         }
 
@@ -1466,7 +1497,10 @@
             }
 
             .bundle-hero-img {
-                max-width: 320px;
+                max-width: none;
+                width: 420px;
+                margin-top: -20px;
+                margin-bottom: -50px;
             }
 
             .bundle-pricing {
@@ -1533,6 +1567,26 @@
 
             .credential-number {
                 font-size: 1.8rem;
+            }
+
+            /* Product CTA wrapper - mobile price top left, button centered */
+            .product-cta-wrapper {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                gap: 16px;
+                width: 100%;
+            }
+
+            .product-cta-wrapper .product-price {
+                margin: 0 0 0 20px;
+                align-self: flex-start;
+            }
+
+            .product-cta-wrapper .btn-primary-blue {
+                width: 100%;
+                max-width: 320px;
+                text-align: center;
             }
 
             /* FAQ section */
@@ -1669,11 +1723,13 @@
                         <li>Proven strategies to stand out from 50,000+ applicants</li>
                     </ul>
 
-                    <div class="product-price">
-                        <span class="product-price-amount">$97</span>
-                    </div>
+                    <div class="product-cta-wrapper">
+                        <div class="product-price">
+                            <span class="product-price-amount">$97</span>
+                        </div>
 
-                    <a href="#" class="btn-primary-blue btn-ivy">Get the Ivy & T20 Private Roadmap</a>
+                        <a href="#" class="btn-primary-blue btn-ivy">Get the Ivy & T20 Private Roadmap</a>
+                    </div>
                     <p class="product-note">Instant digital delivery. PDF format. Lifetime access.</p>
                 </div>
             </div>
@@ -1696,11 +1752,13 @@
                         <li>Proven strategies used by students admitted to UCLA, Berkeley, and beyond</li>
                     </ul>
 
-                    <div class="product-price">
-                        <span class="product-price-amount">$97</span>
-                    </div>
+                    <div class="product-cta-wrapper">
+                        <div class="product-price">
+                            <span class="product-price-amount">$97</span>
+                        </div>
 
-                    <a href="#" class="btn-primary-blue">Get the UC Roadmap</a>
+                        <a href="#" class="btn-primary-blue">Get the UC Roadmap</a>
+                    </div>
                     <p class="product-note">Instant digital delivery. PDF format. Lifetime access.</p>
                 </div>
             </div>
@@ -1714,7 +1772,7 @@
                 </div>
                 <div class="product-details">
                     <div class="product-label">Guide #3</div>
-                    <h2 class="product-title">The Unique T20 College Essay Writing Guide</h2>
+                    <h2 class="product-title"><span class="hide-mobile">The Unique </span>T20 <span class="hide-mobile">College </span>Essay Writing Guide</h2>
                     <p class="product-subtitle">The Step-by-Step System Behind T20-Accepted Essays</p>
 
                     <ul class="product-benefits">
@@ -1723,11 +1781,13 @@
                         <li>Ivy and UC officers share their secret rubric for evaluating essays</li>
                     </ul>
 
-                    <div class="product-price">
-                        <span class="product-price-amount">$97</span>
-                    </div>
+                    <div class="product-cta-wrapper">
+                        <div class="product-price">
+                            <span class="product-price-amount">$97</span>
+                        </div>
 
-                    <a href="#" class="btn-primary-blue">Get the Unique Essay Guide</a>
+                        <a href="#" class="btn-primary-blue">Get the Unique Essay Guide</a>
+                    </div>
                     <p class="product-note">Instant digital delivery. PDF format. Lifetime access.</p>
                 </div>
             </div>
