@@ -440,7 +440,7 @@
 
         /* --- Product Sections --- */
         .product-section {
-            padding: 100px 24px;
+            padding: 100px 24px 60px;
         }
 
         .product-section-alt {
@@ -595,7 +595,7 @@
         .bundle-section {
             background: linear-gradient(180deg, var(--bg-color) 0%, #192822 100%);
             text-align: center;
-            padding: 100px 24px;
+            padding: 60px 24px 60px;
         }
 
         .bundle-container {
@@ -611,7 +611,7 @@
             font-size: 0.8rem;
             font-weight: 600;
             letter-spacing: 0.1em;
-            margin-bottom: 24px;
+            margin-bottom: 16px;
         }
 
         .bundle-title {
@@ -623,14 +623,14 @@
         .bundle-subtitle {
             color: #888;
             font-size: 1.1rem;
-            margin-bottom: 50px;
+            margin-bottom: 8px;
         }
 
         .bundle-products {
             display: flex;
             justify-content: center;
             gap: 30px;
-            margin-bottom: 50px;
+            margin-bottom: 30px;
             flex-wrap: wrap;
         }
 
@@ -673,8 +673,8 @@
             background: var(--surface-color);
             border: 2px solid var(--accent-color);
             padding: 40px;
-            margin: 40px auto;
-            max-width: 500px;
+            max-width: 350px;
+            flex-shrink: 0;
         }
 
         .bundle-price-compare {
@@ -710,7 +710,7 @@
             display: flex;
             justify-content: center;
             gap: 40px;
-            margin-top: 40px;
+            margin-top: 50px;
             flex-wrap: wrap;
         }
 
@@ -724,6 +724,29 @@
 
         .bundle-guarantee-icon {
             color: var(--accent-color);
+        }
+
+        .bundle-side-by-side {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 40px;
+            margin-top: -35px;
+            margin-bottom: -35px;
+            transform: translateX(-40px);
+        }
+
+        .bundle-hero-img {
+            max-width: 550px;
+            width: 100%;
+            height: auto;
+        }
+
+        .bundle-product-img {
+            width: 140px;
+            height: auto;
+            margin-bottom: 12px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.4);
         }
 
         /* --- How It Works --- */
@@ -781,6 +804,8 @@
         .authority-section {
             background: #ffffff;
             color: #000;
+            padding-top: 60px;
+            padding-bottom: 40px;
         }
 
         .authority-section .section-title {
@@ -1268,7 +1293,7 @@
             }
 
             .product-section {
-                padding: 60px 16px;
+                padding: 60px 16px 36px;
             }
 
             .product-container {
@@ -1310,17 +1335,16 @@
                 gap: 20px;
             }
 
-            .bundle-product-box {
+            .bundle-side-by-side {
+                flex-direction: column;
+            }
+
+            .bundle-hero-img {
+                max-width: 450px;
+            }
+
+            .bundle-product-img {
                 width: 100px;
-                height: 130px;
-            }
-
-            .bundle-product-icon {
-                font-size: 24px;
-            }
-
-            .bundle-product-name {
-                font-size: 0.65rem;
             }
 
             .bundle-pricing {
@@ -1571,45 +1595,25 @@
             <div class="bundle-container">
                 <div class="bundle-badge">BEST VALUE</div>
                 <h2 class="bundle-title">Get All Three Guides Together</h2>
-                <p class="bundle-subtitle">The complete system that gives your family an unfair advantage in T20 admissions.</p>
+                <p class="bundle-subtitle">The complete system that gives you an unfair advantage in T20 admissions.</p>
 
-                <div class="bundle-products">
-                    <div class="bundle-product-item">
-                        <div class="bundle-product-box">
-                            <div class="bundle-product-icon">🎓</div>
-                            <div class="bundle-product-name">UC Roadmap</div>
-                        </div>
-                        <div class="bundle-product-value">$97 value</div>
-                    </div>
-                    <div class="bundle-product-item">
-                        <div class="bundle-product-box">
-                            <div class="bundle-product-icon">🏛️</div>
-                            <div class="bundle-product-name">Private & Ivy</div>
-                        </div>
-                        <div class="bundle-product-value">$97 value</div>
-                    </div>
-                    <div class="bundle-product-item">
-                        <div class="bundle-product-box">
-                            <div class="bundle-product-icon">✍️</div>
-                            <div class="bundle-product-name">Essay System</div>
-                        </div>
-                        <div class="bundle-product-value">$97 value</div>
-                    </div>
-                </div>
+                <div class="bundle-side-by-side">
+                    <img src="./images/guides_hero_img.png" alt="Complete T20 Guides Bundle" class="bundle-hero-img">
 
-                <div class="bundle-pricing">
+                    <div class="bundle-pricing">
                     <div class="bundle-price-compare">
                         <div class="bundle-price-original">If purchased separately: <span>$291</span></div>
                         <div class="bundle-price-current">$247</div>
                     </div>
                     <div class="bundle-savings">You Save $44</div>
+                    </div>
                 </div>
 
                 <a href="#" class="btn-primary btn-primary-large">Get the Complete Bundle - $247</a>
 
                 <div class="bundle-guarantee">
-                    <span><span class="bundle-guarantee-icon">✓</span> 30-Day Money-Back Guarantee</span>
                     <span><span class="bundle-guarantee-icon">⚡</span> Instant Digital Delivery</span>
+                    <span><span class="bundle-guarantee-icon">📄</span> PDF Format</span>
                     <span><span class="bundle-guarantee-icon">♾️</span> Lifetime Access</span>
                 </div>
             </div>
@@ -1857,7 +1861,7 @@
                 </div>
             </div>
 
-            <p class="final-trust">Secure checkout • Instant delivery • 30-day money-back guarantee</p>
+            <p class="final-trust">Secure checkout • Instant delivery • PDF format</p>
         </section>
     </main>
 
