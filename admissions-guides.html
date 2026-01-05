@@ -1235,7 +1235,7 @@
 
             .hero-section {
                 min-height: auto;
-                padding: 100px 16px 60px;
+                padding: 100px 16px 0;
             }
 
             .hero-title {
@@ -1265,14 +1265,33 @@
                 margin: 0 auto 40px;
             }
 
+            .hero-kicker {
+                display: none;
+            }
+
+            .hero-title {
+                margin-top: 20px;
+            }
+
+            .hero-title-line2 {
+                display: inline-block;
+                padding-top: 10px;
+            }
+
+            .hero-subtitle .hide-mobile {
+                display: none;
+            }
+
             .hero-image {
                 order: 2;
                 transform: none;
                 justify-content: center;
+                margin-top: -40px;
             }
 
             .hero-image img {
-                max-width: 100%;
+                max-width: 108.5%;
+                width: 108.5%;
             }
 
             .hero-image-placeholder {
@@ -1300,7 +1319,7 @@
             }
 
             .problem-section {
-                padding: 60px 16px;
+                padding: 50px 16px 60px;
             }
 
             .problem-grid {
@@ -1654,9 +1673,9 @@
             <div class="hero-content">
                 <div class="hero-text">
                     <div class="hero-kicker">Digital College Prep Resources</div>
-                    <h1 class="hero-title"><span style="color: var(--accent-color);">The Elite Application Blueprint:</span><br>Guaranteed T20 Admissions Success</h1>
+                    <h1 class="hero-title"><span style="color: var(--accent-color);">The Elite Application Blueprint:</span><br><span class="hero-title-line2">Guaranteed T20 Admissions Success</span></h1>
                     <p class="hero-subtitle">
-                        Insider strategies from T20 Admissions Officers. Gain the competitive edge that gets you accepted.
+                        Insider strategies from T20 Admissions Officers.<span class="hide-mobile"> Gain the competitive edge that gets you accepted.</span>
                     </p>
                     <a href="#products" class="btn-primary">View the Guides</a>
                 </div>
