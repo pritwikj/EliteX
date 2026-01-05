@@ -558,7 +558,7 @@
         .btn-primary-blue {
             background-color: #0281c7;
             color: #fff;
-            padding: 16px 40px;
+            padding: 16px 32px;
             border-radius: 2px;
             text-decoration: none;
             font-weight: 600;
@@ -1184,6 +1184,13 @@
             font-size: 0.8rem;
         }
 
+        /* Desktop-only: extra space between checklist and CTA button */
+        @media (min-width: 769px) {
+            .product-benefits {
+                margin-bottom: 32px;
+            }
+        }
+
         /* --- Responsive Design --- */
         @media (max-width: 1024px) {
             .steps-grid {
@@ -1751,10 +1758,6 @@
                     </ul>
 
                     <div class="product-cta-wrapper">
-                        <div class="product-price">
-                            <span class="product-price-amount">$97</span>
-                        </div>
-
                         <a href="#" class="btn-primary-blue btn-ivy">Get the Ivy & T20 Private Roadmap</a>
                     </div>
                     <p class="product-note">Instant digital delivery. PDF format. Lifetime access.</p>
@@ -1780,10 +1783,6 @@
                     </ul>
 
                     <div class="product-cta-wrapper">
-                        <div class="product-price">
-                            <span class="product-price-amount">$97</span>
-                        </div>
-
                         <a href="#" class="btn-primary-blue">Get the UC Roadmap</a>
                     </div>
                     <p class="product-note">Instant digital delivery. PDF format. Lifetime access.</p>
@@ -1809,10 +1808,6 @@
                     </ul>
 
                     <div class="product-cta-wrapper">
-                        <div class="product-price">
-                            <span class="product-price-amount">$97</span>
-                        </div>
-
                         <a href="#" class="btn-primary-blue">Get the Unique Essay Guide</a>
                     </div>
                     <p class="product-note">Instant digital delivery. PDF format. Lifetime access.</p>
@@ -2076,9 +2071,9 @@
                 <a href="#bundle" class="btn-primary btn-primary-large">Get Complete Bundle - $247</a>
                 <p class="cta-or">or choose individual guides</p>
                 <div class="final-cta-secondary">
-                    <a href="#ivy-roadmap" class="btn-outline">Private & Ivy - $97</a>
-                    <a href="#uc-roadmap" class="btn-outline">UC Roadmap - $97</a>
-                    <a href="#essay-system" class="btn-outline">Essay System - $97</a>
+                    <a href="#ivy-roadmap" class="btn-outline">Private & Ivy</a>
+                    <a href="#uc-roadmap" class="btn-outline">UC Roadmap</a>
+                    <a href="#essay-system" class="btn-outline">Essay System</a>
                 </div>
             </div>
 
